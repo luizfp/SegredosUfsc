@@ -15,7 +15,7 @@ Desse modo, todos os créditos da ideia em si se devem aos criadores da página.
 
 TODO
 ------------
-Ainda há muitas tarefas a se fazer para deixar o app <i>aceitável</i>, pretendo elencar em breve aqui algumas delas.
+Ainda há muitas tarefas a se fazer para deixar o app <i>aceitável</i>, pretendo elencar em breve, aqui, algumas delas.
 
 Tratar corretamente uma <i>configuration changes</i> é uma delas, por exemplo (PR's são bem-vindos).
 
