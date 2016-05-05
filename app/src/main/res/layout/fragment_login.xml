@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login.LoginActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_background"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/img_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_login"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+
+        <LinearLayout
+            android:id="@+id/layout_textLogin"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_login"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="segredos ufsc"
+                android:textColor="@color/white"
+                android:id="@+id/txt_appName"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="We don&apos;t know who you are"
+                android:id="@+id/txt_fraseLogin"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/layout_textLogin"
+            android:layout_marginTop="15dp"
+            android:id="@+id/linearLayout"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_baseColor="@color/white"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/white"
+                app:met_primaryColor="@color/white"
+                app:met_errorColor="@color/white"
+                android:inputType="textEmailAddress"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Email UFSC"
+                android:layout_marginTop="50dp"
+                android:minHeight="50dp"
+                app:met_floatingLabel="highlight"
+                app:met_clearButton="true"/>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/partial_rounded_button_login">
+                <!--<Button-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Enviar Email"-->
+                <!--android:id="@+id/btn_login"-->
+                <!--android:textColor="@color/login_background"-->
+                <!--android:padding="10dp"-->
+                <!--android:background="?attr/selectableItemBackground"/>-->
+
+                <br.com.luizfp.segredosufsc.ui.LoadingButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackground"
+                    app:pbLoadingText="ENVIANDO…"
+                    app:pbProgressColor="@color/login_background"
+                    app:pbText="ENVIAR EMAIL"
+                    app:pbTextSize="11sp"
+                    app:pbTextColor="@color/login_background"/>
+            </FrameLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,75 @@
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:fillViewport="true">
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/darkBackground"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="É anônimo e sempre será"
+                android:textColor="@color/white"
+                android:id="@+id/txt_anonimo"
+                android:gravity="center"
+                android:layout_marginTop="16dp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                style="@style/DarkCardView"
+                app:cardElevation="16dp"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:gravity="center">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edt_novoSegredo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:met_baseColor="@color/white"
+                        app:met_textColor="@color/white"
+                        app:met_textColorHint="@color/white"
+                        app:met_primaryColor="@color/white"
+                        app:met_errorColor="@color/white"
+                        android:hint="DESABAFE"
+                        app:met_floatingLabel="highlight" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_novoSegredo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:fabSize="normal"
+            app:rippleColor="@color/white"
+            app:pressedTranslationZ="12dp"
+            app:backgroundTint="@color/login_background"
+            android:src="@drawable/ic_send_white"/>
+    </android.support.design.widget.CoordinatorLayout>
+</ScrollView>

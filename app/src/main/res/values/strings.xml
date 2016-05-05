@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">segredos ufsc</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="default_loading">Carregando…</string>
+    <string name="text_todos">Todos</string>
+    <string name="text_favoritos">Favoritos</string>
+    <string name="action_img">Imagem</string>
+    <string name="action_text">Texto</string>
+    <string name="text_compartilhe_segredo">Compartilhe seu segredo</string>
+    <string name="action_about">Sobre</string>
+    <string name="action_save_gallery">Salvar na galeria</string>
+    <string name="aviso_selecao_inicial">A letra que você escolher será mostrada nos comentários juntamente com seu curso. Você pode escolher a inicial do seu nome ou qualquer letra que lhe agrade. A decisão é sua.</string>
+
+    <string name="exception_message_generic">Estamos com problemas, tente mais tarde</string>
+    <string name="exception_message_no_internet_connection">Não há conexão com a internet</string>
+    <string name="exception_message_malformed_email">Formato de email inválido</string>
+    <string name="exception_message_not_an_usfc_email">Você precisa usar seu email da ufsc: seu.email@grad.ufsc.br</string>
+    <string name="exception_message_server_side">Erro ao se conectar ao servidor :(</string>
+    <string name="error_message_wrong_length_access_code">O código de acesso precisa conter 4 dígitos</string>
+    <string name="action_exit">Sair</string>
+    <string name="exception_message_unauthorized">Acesso negado, token inválido</string>
+    <string name="comentario_enviado">Comentário enviado!</string>
+    <string name="inicial_atualizada">Inicial atualizada</string>
+</resources>

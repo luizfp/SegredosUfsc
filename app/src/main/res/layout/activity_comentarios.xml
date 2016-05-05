@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".comentario.ComentariosActivity">
+
+    <br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <br.com.luizfp.segredosufsc.ui.EmptyRecyclerView
+                android:id="@+id/recycler_comentarios"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"/>
+
+            <include
+                layout="@layout/partial_empty_view_coments"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+    </br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".6dp"
+            android:background="@color/black"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_coment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Comentar..."
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:maxLines="5"
+                    android:layout_marginLeft="5dp"
+                    android:background="@color/transparent"
+                    android:minHeight="55dp" />
+
+                <ImageButton
+                    android:id="@+id/imgBtn_sendComent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_send_gray"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="8dp"/>
+            </LinearLayout>
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress_comentario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:indicator="BallPulseSync"
+                app:indicator_color="@color/login_background"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

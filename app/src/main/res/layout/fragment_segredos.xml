@@ -1,0 +1,38 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".segredo.fragment.SegredosFragment">
+
+    <br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <br.com.luizfp.segredosufsc.ui.EmptyRecyclerView
+                android:id="@+id/recycler_segredos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                layout="@layout/partial_empty_view_favorites"
+                android:visibility="gone"/>
+
+            <include
+                layout="@layout/partial_empty_view_all_secrets"
+                android:visibility="gone"/>
+        </FrameLayout>
+    </br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_segredos"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+
+</FrameLayout>

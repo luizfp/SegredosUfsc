@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.luizfp.segredosufsc">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".segredo.activity.SegredosActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/AppTheme.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.confirm_access_code.ConfirmAccessCodeActivity"
+            android:theme="@style/AppTheme.Login"
+            android:label="Falta pouco…"/>
+        <activity
+            android:name=".segredo.novo.NovoSegredoActivity"
+            android:label="@string/text_compartilhe_segredo"
+            android:parentActivityName=".segredo.activity.SegredosActivity"
+            android:theme="@style/AppTheme.Dark">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".segredo.activity.SegredosActivity" />
+        </activity>
+        <activity
+            android:name=".comentario.ComentariosActivity"
+            android:theme="@style/AppTheme.Dark.Comentario" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="655d39de837e69b4ae5f5a57778ab50d8b7cad85" />
+    </application>
+
+</manifest>

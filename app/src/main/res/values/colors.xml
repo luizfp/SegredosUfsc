@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#fff</color>
+    <color name="white_gray">#CCCCCC</color>
+    <color name="transparent">#0000</color>
+    <color name="black">#000</color>
+    <color name="gray_light">#D5D5D5</color>
+    <color name="tab_not_selected_text_color">#7885cb</color>
+
+    <color name="segredo_bg_1">#388E3C</color>
+    <color name="segredo_bg_2">#7B1FA2</color>
+    <color name="segredo_bg_3">#AFB42B</color>
+    <color name="segredo_bg_4">#795548</color>
+    <color name="segredo_bg_5">#607D8B</color>
+    <color name="segredo_bg_6">#009688</color>
+    <color name="segredo_bg_7">#FFA000</color>
+    <color name="segredo_bg_8">#03A9F4</color>
+
+    <color name="login_background">#1976D2</color>
+    <color name="login_button">#BBDEFB</color>
+
+    <color name="darkPrimary">#212121</color>
+    <color name="darkPrimaryDark">#000000</color>
+    <color name="darkBackground">#303030</color>
+    <color name="darkCardView">#424242</color>
+
+    <!-- SwipeRefreshLayout -->
+    <color name="refresh_progress_1">#33B5E5</color>
+    <color name="refresh_progress_2">#99CC00</color>
+    <color name="refresh_progress_3">#CC0000</color>
+</resources>

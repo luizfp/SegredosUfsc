@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="alfabeto">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+    <string-array name="cursos_ufsc">
+        <item>Administração</item>
+        <item>Agronomia</item>
+        <item>Antropologia</item>
+        <item>Arquitetura e Urbanismo</item>
+        <item>Arquivologia</item>
+        <item>Artes Cênicas</item>
+        <item>Bacharelado Interdisciplinar em Mobilidade</item>
+        <item>Biblioteconomia</item>
+        <item>Ciências Biológicas</item>
+        <item>Ciências Contábeis</item>
+        <item>Ciências da Computação</item>
+        <item>Ciência e Tecnologia de Alimentos</item>
+        <item>Ciências Econômicas</item>
+        <item>Ciências Sociais</item>
+        <item>Cinema</item>
+        <item>Design</item>
+        <item>Direito</item>
+        <item>Educação Física</item>
+        <item>Enfermagem</item>
+        <item>Engenharia Automotiva</item>
+        <item>Engenharia Aeroespacial</item>
+        <item>Engenharia Civil</item>
+        <item>Engenharia de Alimentos</item>
+        <item>Engenharia de Aquicultura</item>
+        <item>Engenharia de Computação</item>
+        <item>Engenharia de Controle e Automação</item>
+        <item>Engenharia de Energia</item>
+        <item>Engenharia de Infraestrutura</item>
+        <item>Engenharia de Materiais</item>
+        <item>Engenharia de Produção Civil</item>
+        <item>Engenharia de Produção Elétrica</item>
+        <item>Engenharia de Produção Mecânica</item>
+        <item>Engenharia de Transportes e Logística</item>
+        <item>Engenharia Elétrica</item>
+        <item>Engenharia Eletrônica</item>
+        <item>Engenharia Ferroviária e Metroviária </item>
+        <item>Engenharia Florestal</item>
+        <item>Engenharia Mecânica</item>
+        <item>Engenharia Mecatrônica</item>
+        <item>Engenharia Naval</item>
+        <item>Engenharia Química</item>
+        <item>Engenharia Sanitária e Ambiental</item>
+        <item>Engenharia Têxtil</item>
+        <item>Farmácia</item>
+        <item>Filosofia</item>
+        <item>Física</item>
+        <item>Fisioterapia</item>
+        <item>Fonoaudiologia</item>
+        <item>Geografia</item>
+        <item>Geologia</item>
+        <item>História</item>
+        <item>Jornalismo</item>
+        <item>Letras – Língua Alemã</item>
+        <item>Letras – Língua Espanhola</item>
+        <item>Letras – Língua Francesa</item>
+        <item>Letras – Língua Inglesa</item>
+        <item>Letras – Língua Italiana</item>
+        <item>Letras – Libras</item>
+        <item>Letras – Língua Portuguesa</item>
+        <item>Matemática</item>
+        <item>Matemática</item>
+        <item>Matemática e Computação Científica</item>
+        <item>Medicina</item>
+        <item>Medicina Veterinária</item>
+        <item>Meteorologia</item>
+        <item>Museologia</item>
+        <item>Nutrição</item>
+        <item>Oceanografia</item>
+        <item>Odontologia</item>
+        <item>Pedagogia</item>
+        <item>Psicologia</item>
+        <item>Química</item>
+        <item>Relações Internacionais</item>
+        <item>Secretariado Executivo</item>
+        <item>Serviço Social</item>
+        <item>Sistemas de Informação</item>
+        <item>Tecnologias da Informação e Comunicação</item>
+        <item>Zootecnia</item>
+    </string-array>
+</resources>
