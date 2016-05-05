@@ -7,7 +7,7 @@ import br.com.luizfp.segredosufsc.mvp.LoadingView;
  */
 public interface ComentariosView extends LoadingView {
     void enableToResend();
-    void enableToSendAnotherComent();
+    void enableToSendAnotherComment();
     void showSendWithSuccess(String message);
     void updateComentariosList();
     void redrawList();

@@ -73,10 +73,10 @@ public class ComentariosPresenterImpl extends MvpPresenter<ComentariosView>
     }
 
     @Override
-    public void sendComent(String comentario) {
+    public void sendComment(String comentario) {
         this.mComentario = comentario;
         if (mSegredo != null) {
-            L.d(TAG, "sendComent(): " + comentario + " " + mSegredo.getId());
+            L.d(TAG, "sendComment(): " + comentario + " " + mSegredo.getId());
             if (isViewAttached()) {
                 getView().showLoading();
                 mSendCommentUseCase = new SendCommentUseCase(Schedulers.io(),
@@ -101,14 +101,14 @@ public class ComentariosPresenterImpl extends MvpPresenter<ComentariosView>
     public void updateComentariosList() {
         if (isViewAttached() &&  mSegredo != null) {
             // Não precisa chamar o showLoading() pois é automático no swipeToRefresh.
-            mGetCommentsUseCase = new GetComentsUseCase(Schedulers.io(),
+            mGetCommentsUseCase = new GetCommentsUseCase(Schedulers.io(),
                     AndroidSchedulers.mainThread(), getView().context(), mSegredo.getId());
             mGetCommentsUseCase.execute(new GetComentsSubscriber());
         }
     }
 
     @Override
-    public boolean thereIsANewNumberOfComents() {
+    public boolean thereIsANewNumberOfComments() {
         return mSegredo.getComentarioList().size() > mTamanhoInicialListaComentario;
     }
 
@@ -134,7 +134,7 @@ public class ComentariosPresenterImpl extends MvpPresenter<ComentariosView>
             comentario.setNomeCursoUsuario(Prefs.getString(getView().context(), Prefs.COURSE_USER_KEY));
             mSegredo.getComentarioList().add(comentario);
             getView().redrawList();
-            getView().enableToSendAnotherComent();
+            getView().enableToSendAnotherComment();
             getView().showSendWithSuccess(getView().context().getString(R.string.comentario_enviado));
         }
     }

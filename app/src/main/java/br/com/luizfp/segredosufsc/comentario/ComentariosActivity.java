@@ -56,7 +56,7 @@ public class ComentariosActivity extends MvpActivity<ComentariosPresenter>
 
     @Override
     public void onBackPressed() {
-        if (mPresenter.thereIsANewNumberOfComents()) {
+        if (mPresenter.thereIsANewNumberOfComments()) {
             SegredoViewModel segredo = mPresenter.getSegredo();
             L.d(TAG, "Id enviado: " + segredo.getId());
             L.d(TAG, "Novo número de comentários: " + segredo.getComentarioList().size());
@@ -74,7 +74,7 @@ public class ComentariosActivity extends MvpActivity<ComentariosPresenter>
 
     @OnClick(R.id.imgBtn_sendComent)
     public void onClickToSendComent(View view) {
-        mPresenter.sendComent(mEdtComent.getText().toString().trim());
+        mPresenter.sendComment(mEdtComent.getText().toString().trim());
     }
 
     private void recoveryIntentData() {
@@ -165,7 +165,7 @@ public class ComentariosActivity extends MvpActivity<ComentariosPresenter>
     }
 
     @Override
-    public void enableToSendAnotherComent() {
+    public void enableToSendAnotherComment() {
         mEdtComent.setFocusableInTouchMode(true);
         mEdtComent.setText("");
         mEdtComent.setTextColor(ContextCompat.getColor(this, R.color.black));

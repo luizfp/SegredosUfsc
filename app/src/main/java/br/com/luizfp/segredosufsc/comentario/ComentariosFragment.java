@@ -72,7 +72,7 @@ public class ComentariosFragment extends MvpFragment<ComentariosPresenter>
 
     @OnClick(R.id.imgBtn_sendComent)
     public void onClickToSendComent(View view) {
-        mPresenter.sendComent(mEdtComent.getText().toString().trim());
+        mPresenter.sendComment(mEdtComent.getText().toString().trim());
     }
 
     private void recoverySegredo() {
@@ -158,7 +158,7 @@ public class ComentariosFragment extends MvpFragment<ComentariosPresenter>
     }
 
     @Override
-    public void enableToSendAnotherComent() {
+    public void enableToSendAnotherComment() {
         mEdtComent.setFocusableInTouchMode(true);
         mEdtComent.setText("");
         mEdtComent.setTextColor(ContextCompat.getColor(getContext(), R.color.black));

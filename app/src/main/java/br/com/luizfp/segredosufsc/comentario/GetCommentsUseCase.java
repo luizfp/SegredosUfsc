@@ -20,13 +20,13 @@ import rx.Scheduler;
 /**
  * Created by luiz on 3/19/16.
  */
-public class GetComentsUseCase extends UseCase {
+public class GetCommentsUseCase extends UseCase {
 
     private final Context mContext;
     private final Long mIdSegredo;
 
-    public GetComentsUseCase(Scheduler subscribeOnScheduler, Scheduler observeOnScheduler,
-                             Context context, Long idSegredo) {
+    public GetCommentsUseCase(Scheduler subscribeOnScheduler, Scheduler observeOnScheduler,
+                              Context context, Long idSegredo) {
         super(subscribeOnScheduler, observeOnScheduler);
         this.mContext = context;
         this.mIdSegredo = idSegredo;
