@@ -21,7 +21,7 @@ Tratar corretamente uma <i>configuration changes</i> é uma delas, por exemplo (
 
 Quer contribuir?
 ------------
-Qualquer PR será avaliado e ser for significativo, será aceito. :D
+Qualquer PR será avaliado e, se for significativo, será aceito. :D
 
 Relatar um problema, dúvidas ou sugestões?
 ------------
