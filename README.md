@@ -29,4 +29,9 @@ A seção de <a href="https://github.com/luizfp/SegredosUfsc/issues">Issues</a> 
 
 Screenshots
 ------------
-...
+<img src="/art/Screenshot_2016-05-05-01-33-30.png?raw=true" width="250">
+<img src="/art/Screenshot_2016-05-05-01-33-53.png?raw=true" width="250">
+<img src="/art/Screenshot_2016-05-05-01-34-51.png?raw=true" width="250">
+<img src="/art/Screenshot_2016-05-05-01-34-56.png?raw=true" width="250">
+<img src="/art/Screenshot_2016-05-05-01-35-01.png?raw=true" width="250">
+<img src="/art/Screenshot_2016-05-05-01-35-18.png?raw=true" width="250">
