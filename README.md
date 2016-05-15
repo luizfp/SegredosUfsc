@@ -2,7 +2,7 @@
 ![Logo](/app/src/main/res/mipmap-mdpi/ic_launcher.png?raw=true "segredos ufsc")
 
 # segredos ufsc
-Esse é um projeto Open Source que tem como objetivo usar as práticas que atualmente são o estado da arte no desenvolvimento Android. 
+Esse é um projeto Open Source que tem como diferencial usar as práticas que atualmente são o estado da arte no desenvolvimento Android. 
 Por esse motivo esse projeto faz uso de RxJava e MVP, por exemplo. 
 
 O objetivo da criação desse aplicativo é aprender! Portanto, todos são bem-vindos para contribuir e qualquer dúvida relacionada ao app pode ser colocada na seção de <i>Issues</i>.
