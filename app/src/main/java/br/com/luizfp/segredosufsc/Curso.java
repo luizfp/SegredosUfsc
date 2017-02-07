@@ -3,18 +3,32 @@ package br.com.luizfp.segredosufsc;
 
 import org.parceler.Parcel;
 
-import lombok.Getter;
-import lombok.Setter;
-
 /**
  * Created by luiz on 2/23/16.
  */
-@Getter
-@Setter
 @Parcel
 public class Curso  {
     private Long id;
     private String nome;
+
+    public Curso() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     /**
      * Dado override no toString() para retornar apenas o nome, pois assim o spinner dos cursos

@@ -6,7 +6,6 @@ import java.util.List;
 
 import br.com.luizfp.segredosufsc.Usuario;
 import br.com.luizfp.segredosufsc.comentario.ComentarioViewModel;
-import lombok.Data;
 
 /**
  * Classe que representa um segredo especificamente usada para a camada da view.
@@ -15,7 +14,6 @@ import lombok.Data;
  * claro, nós não queremos que aconteça.
  *
  */
-@Data
 @Parcel
 public class SegredoViewModel {
     private Long id;
@@ -26,4 +24,71 @@ public class SegredoViewModel {
     private long totalFavorites;
     private int backgroundColor;
     private boolean favorite;
+
+    public SegredoViewModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSegredo() {
+        return segredo;
+    }
+
+    public void setSegredo(String segredo) {
+        this.segredo = segredo;
+    }
+
+    public String getDataString() {
+        return dataString;
+    }
+
+    public void setDataString(String dataString) {
+        this.dataString = dataString;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public List<ComentarioViewModel> getComentarioList() {
+        return comentarioList;
+    }
+
+    public void setComentarioList(List<ComentarioViewModel> comentarioList) {
+        this.comentarioList = comentarioList;
+    }
+
+    public long getTotalFavorites() {
+        return totalFavorites;
+    }
+
+    public void setTotalFavorites(long totalFavorites) {
+        this.totalFavorites = totalFavorites;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 }
