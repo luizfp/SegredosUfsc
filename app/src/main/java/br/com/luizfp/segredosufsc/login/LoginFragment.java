@@ -23,8 +23,8 @@ import br.com.luizfp.segredosufsc.login.confirm_access_code.ConfirmAccessCodeFra
 import br.com.luizfp.segredosufsc.ui.LoadingButton;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
-import butterknife.Bind;
 import butterknife.BindDimen;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -33,12 +33,12 @@ import butterknife.OnClick;
  */
 public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginView {
     private static final String TAG = LoginFragment.class.getSimpleName();
-    @Bind(R.id.txt_fraseLogin) TextView mTxtFraseLogin;
-    @Bind(R.id.txt_appName) TextView mTxtAppName;
-    @Bind(R.id.img_login) ImageView mImgLogin;
-    @Bind(R.id.layout_textLogin) ViewGroup mLayoutTextLogin;
-    @Bind(R.id.edt_email) EditText mEdtEmail;
-    @Bind(R.id.btn_login) LoadingButton mBtnLogin;
+    @BindView(R.id.txt_fraseLogin) TextView mTxtFraseLogin;
+    @BindView(R.id.txt_appName) TextView mTxtAppName;
+    @BindView(R.id.img_login) ImageView mImgLogin;
+    @BindView(R.id.layout_textLogin) ViewGroup mLayoutTextLogin;
+    @BindView(R.id.edt_email) EditText mEdtEmail;
+    @BindView(R.id.btn_login) LoadingButton mBtnLogin;
     @BindDimen(R.dimen.fixed_translationy_value_on_rotation) float mBestShotDimen;
 
     public LoginFragment() {
