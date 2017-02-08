@@ -11,34 +11,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
-import com.aigestudio.wheelpicker.view.WheelCrossPicker;
-import com.aigestudio.wheelpicker.view.WheelCurvedPicker;
+import com.aigestudio.wheelpicker.WheelPicker;
 
 import java.util.Arrays;
 
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.util.AlfabetoHelper;
 import br.com.luizfp.segredosufsc.util.L;
-import butterknife.Bind;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static br.com.luizfp.segredosufsc.R.array.alfabeto;
+
 /**
  * Created by luiz on 2/27/16.
  */
-public final class SelectLetterDialog extends PersistentDialog implements AbstractWheelPicker.OnWheelChangeListener {
+public final class SelectLetterDialog extends PersistentDialog implements
+        WheelPicker.OnWheelChangeListener {
     private static final String TAG = SelectLetterDialog.class.getSimpleName();
     public static final String DIALOG_TAG = "select_inicial_dialog";
     public static final String LETRA_ATUAL = "letra_atual";
-    @BindView(R.id.wheelPicker) WheelCurvedPicker wheelCurvedPicker;
+    @BindView(R.id.wheelPicker) WheelPicker wheelCurvedPicker;
     @BindView(R.id.btn_select) Button btnSelect;
     @BindView(R.id.layout_button_select) ViewGroup layoutButtonSelect;
     private OnSelectLetra callback;
-    private String newLetraSelected;
     private String letraAtual;
     private int indexAtual = 0;
+    private String[] mAlfabeto;
 
     public interface OnSelectLetra {
         void onNewLetraSelected(char letra);
@@ -90,33 +90,32 @@ public final class SelectLetterDialog extends PersistentDialog implements Abstra
     }
 
     private void initWheelPicker() {
-        String[] alfabeto = getResources().getStringArray(R.array.alfabeto);
-        L.d(TAG, "Length alfabeto: " + alfabeto.length);
+        mAlfabeto = getResources().getStringArray(alfabeto);
+        L.d(TAG, "Length alfabeto: " + mAlfabeto.length);
         wheelCurvedPicker.setData(Arrays.asList(alfabeto));
-        wheelCurvedPicker.setTextSize(70);
-        wheelCurvedPicker.setCurrentTextColor(ContextCompat.getColor(getContext(), R.color.login_background));
-        wheelCurvedPicker.setOrientation(WheelCrossPicker.HORIZONTAL);
+        wheelCurvedPicker.setItemTextSize(70);
+        wheelCurvedPicker.setSelectedItemTextColor(ContextCompat.getColor(getContext(), R.color.login_background));
+//        wheelCurvedPicker.setOrientation(WheelCrossPicker.HORIZONTAL);
         wheelCurvedPicker.setOnWheelChangeListener(this);
-        indexAtual = AlfabetoHelper.getIndexForLetter(alfabeto, letraAtual);
+        indexAtual = AlfabetoHelper.getIndexForLetter(mAlfabeto, letraAtual);
         L.d(TAG, "initWheelPicker() index:" + indexAtual);
-        wheelCurvedPicker.setItemIndex(indexAtual);
+        wheelCurvedPicker.setSelectedItemPosition(indexAtual);
     }
 
 
     @OnClick(R.id.btn_select)
     public void onClickToSelect(View view) {
         L.d(TAG, "onClickToSelect() letraAtual: " + letraAtual);
-        L.d(TAG, "onClickToSelect() newLetraSelected: " + newLetraSelected);
         L.d(TAG, "onClickToSelect() callback: " + callback);
-        if (letraAtual != null && newLetraSelected != null) {
-            if (letraAtual.equals(newLetraSelected)) {
+        if (letraAtual != null) {
+            if (letraAtual.equals(mAlfabeto[indexAtual])) {
                 if (callback != null) {
                     callback.onSameLetraSelected();
                     dismiss();
                 }
             } else {
                 if (callback != null) {
-                    callback.onNewLetraSelected(newLetraSelected.charAt(0));
+                    callback.onNewLetraSelected(mAlfabeto[indexAtual].charAt(0));
                     dismiss();
                 }
             }
@@ -124,20 +123,19 @@ public final class SelectLetterDialog extends PersistentDialog implements Abstra
     }
 
     @Override
-    public void onWheelScrolling(float deltaX, float deltaY) {
-
+    public void onWheelScrolled(int offset) {
+        // Empty
     }
 
     @Override
-    public void onWheelSelected(int index, String data) {
-        L.d(TAG, "onWheelSelected() index:" + index);
-        indexAtual = index;
-        newLetraSelected = data;
+    public void onWheelSelected(int position) {
+        L.d(TAG, "onWheelSelected() index:" + position);
+        indexAtual = position;
     }
 
     @Override
     public void onWheelScrollStateChanged(int newState) {
-        if (newState != AbstractWheelPicker.SCROLL_STATE_IDLE) {
+        if (newState != WheelPicker.SCROLL_STATE_IDLE) {
             enableButton(false);
         } else {
             enableButton(true);

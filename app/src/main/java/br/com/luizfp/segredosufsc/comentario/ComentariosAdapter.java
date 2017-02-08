@@ -12,7 +12,7 @@ import java.util.List;
 
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.util.L;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -79,11 +79,11 @@ public class ComentariosAdapter extends RecyclerView.Adapter<ComentariosAdapter.
     }
 
     public static class ComentariosViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @Bind(R.id.txt_comentario) TextView mTxtComentario;
-        @Bind(R.id.txt_inicial_nome) TextView mTxtInicial;
-        @Bind(R.id.txt_data) TextView mTxtData;
-        @Bind(R.id.layout_inicial_nome) ViewGroup mLayoutInicialNome;
-        @Bind(R.id.txt_curso) TextView mTxtCurso;
+        @BindView(R.id.txt_comentario) TextView mTxtComentario;
+        @BindView(R.id.txt_inicial_nome) TextView mTxtInicial;
+        @BindView(R.id.txt_data) TextView mTxtData;
+        @BindView(R.id.layout_inicial_nome) ViewGroup mLayoutInicialNome;
+        @BindView(R.id.txt_curso) TextView mTxtCurso;
 
         private ComentariosOnClickListener callback;
 

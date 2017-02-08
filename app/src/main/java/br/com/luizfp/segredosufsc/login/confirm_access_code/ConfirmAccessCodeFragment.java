@@ -21,9 +21,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.aigestudio.wheelpicker.core.AbstractWheelPicker;
-import com.aigestudio.wheelpicker.view.WheelCrossPicker;
-import com.aigestudio.wheelpicker.view.WheelCurvedPicker;
+import com.aigestudio.wheelpicker.WheelPicker;
 
 import java.util.Arrays;
 import java.util.List;
@@ -35,16 +33,17 @@ import br.com.luizfp.segredosufsc.segredo.activity.SegredosActivity;
 import br.com.luizfp.segredosufsc.util.AlfabetoHelper;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
-import butterknife.Bind;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static br.com.luizfp.segredosufsc.R.array.alfabeto;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePresenter> implements
-        ConfirmAccessCodeView, AbstractWheelPicker.OnWheelChangeListener {
+        ConfirmAccessCodeView, WheelPicker.OnWheelChangeListener {
 
     public static final String EXTRA_ID_CODIGO_ACESSO = "extra_id_codigo_acesso";
 
@@ -54,7 +53,7 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
     public static final String EXTRA_SUPOSTA_INICIAL_USUARIO = "extra_suposta_inicial_usuario";
     private static final String TAG = ConfirmAccessCodeActivity.class.getSimpleName();
     @BindView(R.id.edt_codigoAcesso) EditText mEdtCodigoAcesso;
-    @BindView(R.id.wheelPicker) WheelCurvedPicker mWheelCurvedPicker;
+    @BindView(R.id.wheelPicker) WheelPicker mWheelPicker;
     @BindView(R.id.fab_confirmarCodigo) FloatingActionButton mFabConfirmarCodigo;
     @BindView(R.id.progress_confirmAccessCode) ProgressBar mProgressBar;
     @BindView(R.id.spn_cursosUfsc) Spinner mSpnCursosUfsc;
@@ -63,6 +62,7 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
     @BindView(R.id.txt_qualSuaInicial) TextView mTxtQualSuaInicial;
     @BindView(R.id.img_confirmSuccess) ImageView mImgSuccess;
     @BindView(R.id.layout_loadingCoursesList) ViewGroup layoutLoadingCourses;
+    private String[] mAlfabeto;
 
     public ConfirmAccessCodeFragment() {
         setRetainInstance(true);
@@ -107,16 +107,16 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
 
     @Override
     public void fillLettersForSelection(char supostaInicialNome) {
-        String[] alfabeto = getResources().getStringArray(R.array.alfabeto);
-        L.d(TAG, "Length alfabeto: " + alfabeto.length);
-        mWheelCurvedPicker.setData(Arrays.asList(alfabeto));
-        mWheelCurvedPicker.setTextSize(100);
-        mWheelCurvedPicker.setTextColor(ContextCompat.getColor(getContext(), R.color.login_button));
-        mWheelCurvedPicker.setCurrentTextColor(ContextCompat.getColor(getContext(), R.color.white));
-        mWheelCurvedPicker.setOrientation(WheelCrossPicker.HORIZONTAL);
-        mWheelCurvedPicker.setItemIndex(
-                AlfabetoHelper.getIndexForLetter(alfabeto, String.valueOf(supostaInicialNome)));
-        mWheelCurvedPicker.setOnWheelChangeListener(this);
+        mAlfabeto = getResources().getStringArray(alfabeto);
+        L.d(TAG, "Length alfabeto: " + mAlfabeto.length);
+        mWheelPicker.setData(Arrays.asList(alfabeto));
+        mWheelPicker.setItemTextSize(100);
+        mWheelPicker.setItemTextColor(ContextCompat.getColor(getContext(), R.color.login_button));
+        mWheelPicker.setSelectedItemTextColor(ContextCompat.getColor(getContext(), R.color.white));
+//        mWheelPicker.setOrientation(WheelCrossPicker.HORIZONTAL);
+        mWheelPicker.setSelectedItemPosition(
+                AlfabetoHelper.getIndexForLetter(mAlfabeto, String.valueOf(supostaInicialNome)));
+        mWheelPicker.setOnWheelChangeListener(this);
     }
 
     @OnClick(R.id.fab_confirmarCodigo)
@@ -204,18 +204,18 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
     }
 
     @Override
-    public void onWheelScrolling(float deltaX, float deltaY) {
+    public void onWheelScrolled(int offset) {
         // Empty
     }
 
     @Override
-    public void onWheelSelected(int index, String data) {
-        mPresenter.setSelectedLetter(data.charAt(0));
+    public void onWheelSelected(int position) {
+        mPresenter.setSelectedLetter(mAlfabeto[position].charAt(0));
     }
 
     @Override
     public void onWheelScrollStateChanged(int newState) {
-        if (newState != AbstractWheelPicker.SCROLL_STATE_IDLE) {
+        if (newState != WheelPicker.SCROLL_STATE_IDLE) {
             mFabConfirmarCodigo.setEnabled(false);
         } else {
             mFabConfirmarCodigo.setEnabled(true);

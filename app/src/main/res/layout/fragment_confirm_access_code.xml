@@ -127,7 +127,7 @@
                     android:layout_marginStart="10dp" />
             </LinearLayout>
 
-            <com.aigestudio.wheelpicker.view.WheelCurvedPicker
+            <com.aigestudio.wheelpicker.WheelPicker
                 android:id="@+id/wheelPicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

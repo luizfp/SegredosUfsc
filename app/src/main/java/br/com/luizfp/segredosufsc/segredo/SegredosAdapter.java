@@ -13,12 +13,12 @@ import com.like.OnLikeListener;
 
 import java.util.List;
 
-import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.Curso;
+import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.ui.pagination.PaginationAdapter;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -99,13 +99,13 @@ public class SegredosAdapter extends PaginationAdapter<SegredoViewModel> {
 
     public static class SegredosViewHolder extends RecyclerView.ViewHolder implements
             View.OnClickListener, OnLikeListener {
-        @Bind(R.id.txt_data) TextView txtData;
-        @Bind(R.id.txt_segredo) TextView txtSegredo;
-        @Bind(R.id.txt_numComents) TextView txtNumComents;
-        @Bind(R.id.txt_curso) TextView txtCurso;
-        @Bind(R.id.layout_segredo) ViewGroup layoutSegredo;
-        @Bind(R.id.likeButton_favorite) LikeButton likeButtonFavorite;
-        @Bind(R.id.txt_numFavorites) TextView txtNumFavorites;
+        @BindView(R.id.txt_data) TextView txtData;
+        @BindView(R.id.txt_segredo) TextView txtSegredo;
+        @BindView(R.id.txt_numComents) TextView txtNumComents;
+        @BindView(R.id.txt_curso) TextView txtCurso;
+        @BindView(R.id.layout_segredo) ViewGroup layoutSegredo;
+        @BindView(R.id.likeButton_favorite) LikeButton likeButtonFavorite;
+        @BindView(R.id.txt_numFavorites) TextView txtNumFavorites;
 
         private SegredoOnClickListener callback;
 

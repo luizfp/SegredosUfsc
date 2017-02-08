@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.base.BaseFragment;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -25,7 +25,7 @@ public class SegredosTabFragment extends BaseFragment implements
         TabLayout.OnTabSelectedListener {
     private static final int NUM_PAGES = 2;
     private static final String TAG = SegredosTabFragment.class.getSimpleName();
-    @Bind(R.id.viewPager) ViewPager viewPager;
+    @BindView(R.id.viewPager) ViewPager viewPager;
 
     public SegredosTabFragment() {
         // Required empty public constructor
@@ -36,7 +36,7 @@ public class SegredosTabFragment extends BaseFragment implements
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_segredos_tab, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         // ViewPager
         viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         viewPager.setAdapter(new SegredosTabsAdapter(getChildFragmentManager()));
@@ -68,12 +68,6 @@ public class SegredosTabFragment extends BaseFragment implements
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
 
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     private class SegredosTabsAdapter extends FragmentPagerAdapter {
