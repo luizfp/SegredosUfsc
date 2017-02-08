@@ -3,7 +3,6 @@ package br.com.luizfp.segredosufsc.exceptions;
 import android.content.Context;
 
 import br.com.luizfp.segredosufsc.R;
-import retrofit.HttpException;
 
 
 /**
@@ -34,11 +33,12 @@ public class ErrorMessageFactory {
             message = context.getString(R.string.exception_message_not_an_usfc_email);
         } else if (exception instanceof DefaultMessageException) {
             message = exception.getMessage() != null ? exception.getMessage() : "Erro";
-        } else if (exception instanceof HttpException) {
-            if (((HttpException) exception).code() == UNAUTHORIZED) {
-                message = context.getString(R.string.exception_message_unauthorized);
-            }
         }
+//        } else if (exception instanceof HttpException) {
+//            if (((HttpException) exception).code() == UNAUTHORIZED) {
+//                message = context.getString(R.string.exception_message_unauthorized);
+//            }
+//        }
 
         return message;
     }

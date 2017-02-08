@@ -1,8 +1,8 @@
 package br.com.luizfp.segredosufsc.network;
 
 import br.com.luizfp.segredosufsc.Usuario;
-import retrofit.http.Body;
-import retrofit.http.PUT;
+import retrofit2.http.Body;
+import retrofit2.http.PUT;
 import rx.Observable;
 
 /**
