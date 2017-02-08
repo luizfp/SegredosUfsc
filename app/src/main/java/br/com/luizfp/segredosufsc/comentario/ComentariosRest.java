@@ -1,8 +1,8 @@
 package br.com.luizfp.segredosufsc.comentario;
 
 import br.com.luizfp.segredosufsc.network.Response;
-import retrofit.http.Body;
-import retrofit.http.POST;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**

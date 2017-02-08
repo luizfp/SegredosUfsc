@@ -2,15 +2,17 @@ package br.com.luizfp.segredosufsc.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
-import retrofit.RxJavaCallAdapterFactory;
+import br.com.luizfp.segredosufsc.BuildConfig;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 
 /**
  * Created by luiz on 2/24/16.
@@ -23,18 +25,22 @@ public class RestClient {
     public static final String REST_API_URL = "http://192.168.1.19:8080/segredosufscwebservice/rest/";
 
     private static Retrofit sRetrofit;
-    private static  OkHttpClient sOkHttpClient;
+    private static OkHttpClient sOkHttpClient;
 
     static {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        logging.setLevel(BuildConfig.DEBUG
+                ? HttpLoggingInterceptor.Level.BODY
+                : HttpLoggingInterceptor.Level.NONE);
 
-        sOkHttpClient = new OkHttpClient();
+        sOkHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
+                .build();
         sOkHttpClient.interceptors().add(logging);
-        sOkHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
-        sOkHttpClient.setReadTimeout(30, TimeUnit.SECONDS);
 
-        sRetrofit = new retrofit.Retrofit.Builder()
+        sRetrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(getGson()))
                 .baseUrl(REST_API_URL)
@@ -76,5 +82,20 @@ public class RestClient {
                 .setPrettyPrinting()
                 .serializeSpecialFloatingPointValues()
                 .create();
+    }
+
+    private static OkHttpClient getClient() {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        // set your desired log level
+        logging.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE);
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+//        builder.interceptors().add(new AuthorizationInterceptor());
+//        builder.addNetworkInterceptor(new StethoInterceptor());
+        builder.retryOnConnectionFailure(false);
+        // add logging as last interceptor
+        builder.interceptors().add(logging);  // <-- this is the important line!
+        builder.connectTimeout(30, TimeUnit.SECONDS);
+        builder.readTimeout(30, TimeUnit.SECONDS);
+        return builder.build();
     }
 }

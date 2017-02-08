@@ -3,12 +3,12 @@ package br.com.luizfp.segredosufsc.login;
 import java.util.List;
 
 import br.com.luizfp.segredosufsc.Curso;
-import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.network.Credentials;
-import retrofit.http.Field;
-import retrofit.http.FormUrlEncoded;
-import retrofit.http.GET;
-import retrofit.http.POST;
+import br.com.luizfp.segredosufsc.network.Response;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**
