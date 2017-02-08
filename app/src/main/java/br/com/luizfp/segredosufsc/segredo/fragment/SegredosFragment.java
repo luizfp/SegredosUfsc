@@ -26,19 +26,19 @@ import java.io.File;
 import java.util.List;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.mvp.MvpPaginationFragment;
-import br.com.luizfp.segredosufsc.ui.EmptyRecyclerView;
-import br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout;
 import br.com.luizfp.segredosufsc.comentario.ComentarioViewModel;
 import br.com.luizfp.segredosufsc.comentario.ComentariosActivity;
+import br.com.luizfp.segredosufsc.mvp.MvpPaginationFragment;
 import br.com.luizfp.segredosufsc.segredo.SegredoViewModel;
 import br.com.luizfp.segredosufsc.segredo.SegredosAdapter;
+import br.com.luizfp.segredosufsc.ui.EmptyRecyclerView;
+import br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout;
 import br.com.luizfp.segredosufsc.util.IoUtils;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.SdCardUtils;
 import br.com.luizfp.segredosufsc.util.ViewHelper;
-import butterknife.Bind;
 import butterknife.BindInt;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -60,11 +60,11 @@ public class SegredosFragment extends
     public static final int LIMIT = 30;
     public static final String EXTRA_NEW_COMMENTS_LIST = "new_coments_number";
     public static final String EXTRA_ID_SEGREDO = "id_segredo";
-    @Bind(R.id.recycler_segredos) EmptyRecyclerView mRecyclerSegredos;
-    @Bind(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.progress_segredos) ProgressBar mProgressBar;
-    @Bind(R.id.nestedScrollView_emptyViewFavorites) NestedScrollView mEmptyViewFavorites;
-    @Bind(R.id.nestedScrollView_emptyViewAllSecrets) NestedScrollView mEmptyViewAllSecrets;
+    @BindView(R.id.recycler_segredos) EmptyRecyclerView mRecyclerSegredos;
+    @BindView(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.progress_segredos) ProgressBar mProgressBar;
+    @BindView(R.id.nestedScrollView_emptyViewFavorites) NestedScrollView mEmptyViewFavorites;
+    @BindView(R.id.nestedScrollView_emptyViewAllSecrets) NestedScrollView mEmptyViewAllSecrets;
     @BindInt(R.integer.max_lines_segredo) int MAX_LINES_SEGREDOS;
 
     private View mLayoutSegredoTemp;
@@ -90,7 +90,7 @@ public class SegredosFragment extends
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_segredos, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
 
         initRecyclerWithPagination(mRecyclerSegredos);
         initSwypeToRefresh();
@@ -125,12 +125,6 @@ public class SegredosFragment extends
     public void onStop() {
         super.onStop();
         mPresenter.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @OnClick(R.id.btn_addFavorites)

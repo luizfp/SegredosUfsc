@@ -25,7 +25,7 @@ import br.com.luizfp.segredosufsc.segredo.novo.NovoSegredoActivity;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.SelectLetterDialog;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.Prefs;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -37,7 +37,7 @@ public class SegredosActivity extends MvpActivity<SegredosActivityPresenter>
     public static final String EXTRA_LETTER_SELECTED = "extra_selected_letter";
     private static final int NUM_PAGES = 2;
     private MenuItem mMenuItemLetra;
-    @Bind(R.id.viewPager) ViewPager mViewPager;
+    @BindView(R.id.viewPager) ViewPager mViewPager;
     private char mCurrentLetter;
 
     @Override

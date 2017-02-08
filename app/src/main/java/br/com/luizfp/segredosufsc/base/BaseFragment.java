@@ -1,17 +1,21 @@
 package br.com.luizfp.segredosufsc.base;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
 
 import br.com.luizfp.segredosufsc.Application;
+import butterknife.Unbinder;
 
 /**
  * Created by luiz on 2/23/16.
  */
 public abstract class BaseFragment extends Fragment {
+    @Nullable
+    protected Unbinder mUnbinder;
 
     @Override
     public void onDestroy() {
@@ -32,5 +36,14 @@ public abstract class BaseFragment extends Fragment {
      */
     public Context getContext() {
         return getActivity();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
+            mUnbinder = null;
+        }
     }
 }

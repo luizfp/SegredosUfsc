@@ -15,11 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import br.com.luizfp.segredosufsc.mvp.MvpFragment;
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.base.BaseAnimatorListener;
 import br.com.luizfp.segredosufsc.login.confirm_access_code.ConfirmAccessCodeActivity;
 import br.com.luizfp.segredosufsc.login.confirm_access_code.ConfirmAccessCodeFragment;
+import br.com.luizfp.segredosufsc.mvp.MvpFragment;
 import br.com.luizfp.segredosufsc.ui.LoadingButton;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
@@ -51,7 +51,7 @@ public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginV
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         Typeface typefaceFrase = TypefaceHelper.get(getContext(), "josefin_sans_light_italic.ttf");
         Typeface typefaceAppName = TypefaceHelper.get(getContext(), "ubuntu_light.ttf");
         mTxtFraseLogin.setTypeface(typefaceFrase);
@@ -59,11 +59,6 @@ public class LoginFragment extends MvpFragment<LoginPresenter> implements LoginV
         return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 
     @Override
     protected LoginPresenter instantiatePresenter() {

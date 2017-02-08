@@ -14,18 +14,19 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import br.com.luizfp.segredosufsc.R;
+import br.com.luizfp.segredosufsc.base.BaseFragment;
 import br.com.luizfp.segredosufsc.util.L;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NovoSegredoLoadingFragment extends Fragment {
+public class NovoSegredoLoadingFragment extends BaseFragment {
     private static final String TAG = NovoSegredoLoadingFragment.class.getSimpleName();
     public static final String FRAG_TAG = "loading_fragment";
-    @Bind(R.id.loadingView) AVLoadingIndicatorView mLoadingView;
-    @Bind(R.id.loadingDone) ImageView mLoadingDone;
+    @BindView(R.id.loadingView) AVLoadingIndicatorView mLoadingView;
+    @BindView(R.id.loadingDone) ImageView mLoadingDone;
 
     public NovoSegredoLoadingFragment() {
         setRetainInstance(true);
@@ -36,7 +37,7 @@ public class NovoSegredoLoadingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_loading, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -50,12 +51,6 @@ public class NovoSegredoLoadingFragment extends Fragment {
     public void onStop() {
         EventBus.getDefault().unregister(this);
         super.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     /**

@@ -21,7 +21,7 @@ import br.com.luizfp.segredosufsc.mvp.MvpFragment;
 import br.com.luizfp.segredosufsc.ui.EmptyRecyclerView;
 import br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout;
 import br.com.luizfp.segredosufsc.util.L;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -34,12 +34,12 @@ public class ComentariosFragment extends MvpFragment<ComentariosPresenter>
         ComentariosAdapter.ComentariosOnClickListener,
         ComentariosView {
     private static final String TAG = ComentariosFragment.class.getSimpleName();
-    @Bind(R.id.recycler_comentarios) EmptyRecyclerView mRecyclerComentarios;
-    @Bind(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.imgBtn_sendComent) ImageButton mImgBtnSendComent;
-    @Bind(R.id.edt_coment) EditText mEdtComent;
-    @Bind(R.id.progress_comentario) AVLoadingIndicatorView mProgressComentario;
-    @Bind(R.id.nestedScrollView_emptyViewComents) ViewGroup mEmptyViewComents;
+    @BindView(R.id.recycler_comentarios) EmptyRecyclerView mRecyclerComentarios;
+    @BindView(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.imgBtn_sendComent) ImageButton mImgBtnSendComent;
+    @BindView(R.id.edt_coment) EditText mEdtComent;
+    @BindView(R.id.progress_comentario) AVLoadingIndicatorView mProgressComentario;
+    @BindView(R.id.nestedScrollView_emptyViewComents) ViewGroup mEmptyViewComents;
     private ComentariosAdapter mAdapter;
 
     public ComentariosFragment() {
@@ -57,17 +57,11 @@ public class ComentariosFragment extends MvpFragment<ComentariosPresenter>
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_comentarios, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         initRecyclerView();
         initSwipeToRefresh();
         observeEditTextComent();
         return view;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @OnClick(R.id.imgBtn_sendComent)

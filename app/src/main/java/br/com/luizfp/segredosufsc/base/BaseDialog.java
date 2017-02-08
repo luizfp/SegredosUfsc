@@ -9,12 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.luizfp.segredosufsc.util.L;
+import butterknife.Unbinder;
 
 /**
  * Created by luiz on 2/25/16.
  */
 public abstract class BaseDialog extends DialogFragment {
     private static final String TAG = BaseDialog.class.getSimpleName();
+    @Nullable
+    protected Unbinder mUnbinder;
 
     // =========================================
     //
@@ -56,5 +59,9 @@ public abstract class BaseDialog extends DialogFragment {
     public void onDestroyView() {
         L.d(TAG, "onDestroyView()");
         super.onDestroyView();
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
+            mUnbinder = null;
+        }
     }
 }

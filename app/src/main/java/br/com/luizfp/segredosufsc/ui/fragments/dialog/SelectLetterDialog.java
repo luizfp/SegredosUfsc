@@ -21,6 +21,7 @@ import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.util.AlfabetoHelper;
 import br.com.luizfp.segredosufsc.util.L;
 import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -31,9 +32,9 @@ public final class SelectLetterDialog extends PersistentDialog implements Abstra
     private static final String TAG = SelectLetterDialog.class.getSimpleName();
     public static final String DIALOG_TAG = "select_inicial_dialog";
     public static final String LETRA_ATUAL = "letra_atual";
-    @Bind(R.id.wheelPicker) WheelCurvedPicker wheelCurvedPicker;
-    @Bind(R.id.btn_select) Button btnSelect;
-    @Bind(R.id.layout_button_select) ViewGroup layoutButtonSelect;
+    @BindView(R.id.wheelPicker) WheelCurvedPicker wheelCurvedPicker;
+    @BindView(R.id.btn_select) Button btnSelect;
+    @BindView(R.id.layout_button_select) ViewGroup layoutButtonSelect;
     private OnSelectLetra callback;
     private String newLetraSelected;
     private String letraAtual;
@@ -72,7 +73,7 @@ public final class SelectLetterDialog extends PersistentDialog implements Abstra
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_select_inicial, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         Bundle bundle = getArguments();
         if (bundle != null && bundle.containsKey(LETRA_ATUAL)) {
             letraAtual = bundle.getString(LETRA_ATUAL);
@@ -86,12 +87,6 @@ public final class SelectLetterDialog extends PersistentDialog implements Abstra
     public void onDetach() {
         super.onDetach();
         callback = null;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     private void initWheelPicker() {

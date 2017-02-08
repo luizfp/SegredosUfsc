@@ -19,12 +19,12 @@ import org.parceler.Parcels;
 
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.mvp.MvpActivity;
-import br.com.luizfp.segredosufsc.ui.EmptyRecyclerView;
-import br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout;
 import br.com.luizfp.segredosufsc.segredo.SegredoViewModel;
 import br.com.luizfp.segredosufsc.segredo.fragment.SegredosFragment;
+import br.com.luizfp.segredosufsc.ui.EmptyRecyclerView;
+import br.com.luizfp.segredosufsc.ui.EmptySwipeRefreshLayout;
 import br.com.luizfp.segredosufsc.util.L;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -34,12 +34,12 @@ public class ComentariosActivity extends MvpActivity<ComentariosPresenter>
         ComentariosView {
     public static final String EXTRA_SEGREDO_ITEM = "segredo_item";
     private static final String TAG = ComentariosActivity.class.getSimpleName();
-    @Bind(R.id.recycler_comentarios) EmptyRecyclerView mRecyclerComentarios;
-    @Bind(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
-    @Bind(R.id.imgBtn_sendComent) ImageButton mImgBtnSendComent;
-    @Bind(R.id.edt_coment) EditText mEdtComent;
-    @Bind(R.id.progress_comentario) AVLoadingIndicatorView mProgressComentario;
-    @Bind(R.id.nestedScrollView_emptyViewComents) ViewGroup mEmptyViewComents;
+    @BindView(R.id.recycler_comentarios) EmptyRecyclerView mRecyclerComentarios;
+    @BindView(R.id.swipeToRefresh) EmptySwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.imgBtn_sendComent) ImageButton mImgBtnSendComent;
+    @BindView(R.id.edt_coment) EditText mEdtComent;
+    @BindView(R.id.progress_comentario) AVLoadingIndicatorView mProgressComentario;
+    @BindView(R.id.nestedScrollView_emptyViewComents) ViewGroup mEmptyViewComents;
     private ComentariosAdapter mAdapter;
 
     @Override

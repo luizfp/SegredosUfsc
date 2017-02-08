@@ -19,7 +19,7 @@ import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.base.BaseFragment;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.ConfirmarEnvioDialog;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,8 +29,8 @@ import butterknife.OnClick;
 public class NovoSegredoFragment extends BaseFragment
         implements OnSendListener {
     public static final String FRAG_TAG = "novo_segredo_fragment";
-    @Bind(R.id.txt_anonimo) TextView mTxtAnonimo;
-    @Bind(R.id.edt_novoSegredo) EditText mEdtNovoSegredo;
+    @BindView(R.id.txt_anonimo) TextView mTxtAnonimo;
+    @BindView(R.id.edt_novoSegredo) EditText mEdtNovoSegredo;
     private OnClickToSend mCallback;
 
 
@@ -58,7 +58,7 @@ public class NovoSegredoFragment extends BaseFragment
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_novo_segredo, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         setTypeface();
         return view;
     }
@@ -66,12 +66,6 @@ public class NovoSegredoFragment extends BaseFragment
     private void setTypeface() {
         Typeface typefaceAnonimo = TypefaceHelper.get(getContext(), "ubuntu_light.ttf");
         mTxtAnonimo.setTypeface(typefaceAnonimo);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @Override

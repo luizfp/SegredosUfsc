@@ -36,6 +36,7 @@ import br.com.luizfp.segredosufsc.util.AlfabetoHelper;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
 import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -52,16 +53,16 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
      */
     public static final String EXTRA_SUPOSTA_INICIAL_USUARIO = "extra_suposta_inicial_usuario";
     private static final String TAG = ConfirmAccessCodeActivity.class.getSimpleName();
-    @Bind(R.id.edt_codigoAcesso) EditText mEdtCodigoAcesso;
-    @Bind(R.id.wheelPicker) WheelCurvedPicker mWheelCurvedPicker;
-    @Bind(R.id.fab_confirmarCodigo) FloatingActionButton mFabConfirmarCodigo;
-    @Bind(R.id.progress_confirmAccessCode) ProgressBar mProgressBar;
-    @Bind(R.id.spn_cursosUfsc) Spinner mSpnCursosUfsc;
-    @Bind(R.id.txt_avisoCodigoAcesso) TextView mTxtAvisoCodigoAcesso;
-    @Bind(R.id.txt_qualSeuCurso) TextView mtxtQualSeuCurso;
-    @Bind(R.id.txt_qualSuaInicial) TextView mTxtQualSuaInicial;
-    @Bind(R.id.img_confirmSuccess) ImageView mImgSuccess;
-    @Bind(R.id.layout_loadingCoursesList) ViewGroup layoutLoadingCourses;
+    @BindView(R.id.edt_codigoAcesso) EditText mEdtCodigoAcesso;
+    @BindView(R.id.wheelPicker) WheelCurvedPicker mWheelCurvedPicker;
+    @BindView(R.id.fab_confirmarCodigo) FloatingActionButton mFabConfirmarCodigo;
+    @BindView(R.id.progress_confirmAccessCode) ProgressBar mProgressBar;
+    @BindView(R.id.spn_cursosUfsc) Spinner mSpnCursosUfsc;
+    @BindView(R.id.txt_avisoCodigoAcesso) TextView mTxtAvisoCodigoAcesso;
+    @BindView(R.id.txt_qualSeuCurso) TextView mtxtQualSeuCurso;
+    @BindView(R.id.txt_qualSuaInicial) TextView mTxtQualSuaInicial;
+    @BindView(R.id.img_confirmSuccess) ImageView mImgSuccess;
+    @BindView(R.id.layout_loadingCoursesList) ViewGroup layoutLoadingCourses;
 
     public ConfirmAccessCodeFragment() {
         setRetainInstance(true);
@@ -78,19 +79,13 @@ public class ConfirmAccessCodeFragment extends  MvpFragment<ConfirmAccessCodePre
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_confirm_access_code, container, false);
-        ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
         mEdtCodigoAcesso.setFilters(
                 new InputFilter[]{
                         new InputFilter.AllCaps(),
                         new InputFilter.LengthFilter(getResources().getInteger(R.integer.confirm_access_code_length))});
         setTypefaces();
         return view;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     private void setTypefaces() {
