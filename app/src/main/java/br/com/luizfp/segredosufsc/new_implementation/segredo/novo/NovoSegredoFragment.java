@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.segredo.novo;
+package br.com.luizfp.segredosufsc.new_implementation.segredo.novo;
 
 
 import android.content.Context;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 import br.com.luizfp.segredosufsc.OnSendListener;
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.base.BaseFragment;
+import br.com.luizfp.segredosufsc.new_implementation.Fonts;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.ConfirmarEnvioDialog;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
 import butterknife.BindView;
@@ -26,31 +27,14 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NovoSegredoFragment extends BaseFragment
-        implements OnSendListener {
-    public static final String FRAG_TAG = "novo_segredo_fragment";
+public class NovoSegredoFragment extends BaseFragment implements
+        OnSendListener,
+        NovoSegredoContract.View {
     @BindView(R.id.txt_anonimo) TextView mTxtAnonimo;
     @BindView(R.id.edt_novoSegredo) EditText mEdtNovoSegredo;
-    private OnClickToSend mCallback;
-
-
-    public interface OnClickToSend {
-        void onSend(String segredo);
-    }
 
     public NovoSegredoFragment() {
         setRetainInstance(true);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            mCallback = (OnClickToSend) getActivity();
-        } catch (ClassCastException e) {
-            throw new ClassCastException(getClass().getSimpleName() +
-                    "must implement OnClickToSend");
-        }
     }
 
     @Override
@@ -63,22 +47,9 @@ public class NovoSegredoFragment extends BaseFragment
         return view;
     }
 
-    private void setTypeface() {
-        Typeface typefaceAnonimo = TypefaceHelper.get(getContext(), "ubuntu_light.ttf");
-        mTxtAnonimo.setTypeface(typefaceAnonimo);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mCallback = null;
-    }
-
     @Override
     public void onSend() {
-        if (mCallback != null) {
-            mCallback.onSend(mEdtNovoSegredo.getText().toString().trim());
-        }
+        toast("Precisamos enviar ainda!!!");
     }
 
     @Override
@@ -86,9 +57,30 @@ public class NovoSegredoFragment extends BaseFragment
         toast("Segredo não enviado :/");
     }
 
+
+    @Override
+    public Context context() {
+        return getContext().getApplicationContext();
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
     @OnClick(R.id.fab_novoSegredo)
     public void onClickFab(View view) {
         showDialog(getFragmentManager());
+    }
+
+    private void setTypeface() {
+        Typeface typefaceAnonimo = TypefaceHelper.get(getContext(), Fonts.UBUNTU_LIGHT);
+        mTxtAnonimo.setTypeface(typefaceAnonimo);
     }
 
     private void showDialog(FragmentManager fm) {

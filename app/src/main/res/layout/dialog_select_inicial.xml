@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minWidth="270dp"
+    android:orientation="vertical"
     android:padding="8dp">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/aviso_selecao_inicial"
-        android:id="@+id/textView"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="14sp" />
 
     <com.aigestudio.wheelpicker.view.WheelCurvedPicker
@@ -24,20 +24,21 @@
         android:id="@+id/layout_button_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/partial_rounded_button_dialog_inicial_enable"
         android:layout_gravity="right"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:background="@drawable/partial_rounded_button_dialog_inicial_enable">
+
         <Button
+            android:id="@+id/btn_select"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="Selecione"
+            android:layout_gravity="center_horizontal"
             android:background="?attr/selectableItemBackground"
-            android:textColor="@color/white"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:id="@+id/btn_select"
-            android:layout_gravity="center_horizontal"
+            android:text="Selecione"
+            android:textColor="@color/white"
             android:typeface="monospace" />
     </FrameLayout>
 </LinearLayout>

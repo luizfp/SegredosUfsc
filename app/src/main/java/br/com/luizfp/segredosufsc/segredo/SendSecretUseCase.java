@@ -8,6 +8,7 @@ import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.Usuario;
 import br.com.luizfp.segredosufsc.exceptions.NoNetworkConnectionException;
 import br.com.luizfp.segredosufsc.network.RestClient;
+import br.com.luizfp.segredosufsc.new_implementation.segredo.Segredo;
 import br.com.luizfp.segredosufsc.util.ConnectionUtils;
 import br.com.luizfp.segredosufsc.util.TokenUtils;
 import rx.Observable;

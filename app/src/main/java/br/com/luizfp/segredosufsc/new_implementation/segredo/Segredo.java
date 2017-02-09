@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.segredo;
+package br.com.luizfp.segredosufsc.new_implementation.segredo;
 
 import org.parceler.Parcel;
 
@@ -13,13 +13,13 @@ import br.com.luizfp.segredosufsc.comentario.Comentario;
  */
 @Parcel
 public class Segredo {
-    private Long id;
-    private String segredo;
-    private Date data;
-    private Usuario usuario;
-    private List<Comentario> comentarioList;
-    private long totalFavorites;
-    private boolean favorite;
+    public Long id;
+    public String segredo;
+    public Date data;
+    public Usuario usuario;
+    public List<Comentario> comentarioList;
+    public long totalFavorites;
+    public boolean favorite;
 
     public Segredo() {
     }

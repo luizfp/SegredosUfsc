@@ -1,95 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login.LoginActivity"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context=".login.LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/login_background"
-        android:focusableInTouchMode="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <ImageView
             android:id="@+id/img_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_login"
-            android:layout_gravity="center_horizontal"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/img_login" />
 
 
         <LinearLayout
             android:id="@+id/layout_textLogin"
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_login"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/img_login"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_appName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:text="segredos ufsc"
-                android:textColor="@color/white"
-                android:id="@+id/txt_appName"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:text="segredos ufsc"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <TextView
+                android:id="@+id/txt_fraseLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="We don&apos;t know who you are"
-                android:id="@+id/txt_fraseLogin"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:text="We don&apos;t know who you are"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_below="@+id/layout_textLogin"
-            android:layout_marginTop="15dp"
-            android:id="@+id/linearLayout"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/edt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:met_baseColor="@color/white"
-                app:met_textColor="@color/white"
-                app:met_textColorHint="@color/white"
-                app:met_primaryColor="@color/white"
-                app:met_errorColor="@color/white"
-                android:inputType="textEmailAddress"
+                android:layout_marginTop="50dp"
                 android:drawableLeft="@drawable/ic_email"
-                android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_email"
                 android:ems="10"
                 android:hint="Email UFSC"
-                android:layout_marginTop="50dp"
+                android:inputType="textEmailAddress"
                 android:minHeight="50dp"
+                app:met_baseColor="@color/white"
+                app:met_clearButton="true"
+                app:met_errorColor="@color/white"
                 app:met_floatingLabel="highlight"
-                app:met_clearButton="true"/>
-
+                app:met_primaryColor="@color/white"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/white" />
 
 
             <FrameLayout
@@ -114,8 +112,8 @@
                     app:pbLoadingText="ENVIANDO…"
                     app:pbProgressColor="@color/login_background"
                     app:pbText="ENVIAR EMAIL"
-                    app:pbTextSize="11sp"
-                    app:pbTextColor="@color/login_background"/>
+                    app:pbTextColor="@color/login_background"
+                    app:pbTextSize="11sp" />
             </FrameLayout>
         </LinearLayout>
 

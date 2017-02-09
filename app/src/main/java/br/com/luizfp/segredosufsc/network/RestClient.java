@@ -22,7 +22,7 @@ public class RestClient {
     /**
      * This is our main backend/server URL.
      */
-    public static final String REST_API_URL = "http://192.168.1.19:8080/segredosufscwebservice/rest/";
+    public static final String REST_API_URL = "http://192.168.1.11:8070/segredosufscwebservice/rest/";
 
     private static Retrofit sRetrofit;
     private static OkHttpClient sOkHttpClient;
@@ -49,7 +49,6 @@ public class RestClient {
     }
 
     public static <T> T createService(Class<T> serviceClass) {
-        sOkHttpClient.interceptors().clear();
         return createService(serviceClass, null);
     }
 

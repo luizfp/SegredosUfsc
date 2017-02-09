@@ -7,4 +7,10 @@
         <attr name="pbTextColor" format="color|reference"/>
         <attr name="pbProgressColor" format="color|reference"/>
     </declare-styleable>
+
+    <declare-styleable name="ErrorView">
+        <attr name="errorImage" format="reference" />
+        <attr name="errorMessage" format="string" />
+        <attr name="errorButtonText" format="string" />
+    </declare-styleable>
 </resources>

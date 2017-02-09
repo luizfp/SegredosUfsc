@@ -24,4 +24,6 @@
     <string name="exception_message_unauthorized">Acesso negado, token inválido</string>
     <string name="comentario_enviado">Comentário enviado!</string>
     <string name="inicial_atualizada">Inicial atualizada</string>
+    <string name="error_view_default_message">Ops, Algo Deu Errado!</string>
+    <string name="error_view_default_button_text">Tentar Novamente</string>
 </resources>

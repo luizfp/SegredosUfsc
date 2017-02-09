@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".login.confirm_access_code.ConfirmAccessCodeFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/login_background"
+    android:focusable="true"
     android:focusableInTouchMode="true"
-    android:focusable="true">
+    android:orientation="vertical"
+    tools:context=".login.confirm_access_code.ConfirmAccessCodeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,64 +18,65 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:orientation="vertical">
+            android:paddingTop="@dimen/activity_vertical_margin">
 
             <TextView
+                android:id="@+id/txt_avisoCodigoAcesso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Insira o precioso código de acesso que você recebeu por email. Ele contém 4 dígitos."
-                android:textSize="18sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/white"
-                android:id="@+id/txt_avisoCodigoAcesso" />
+                android:textSize="18sp" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/edt_codigoAcesso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:met_baseColor="@color/white"
-                app:met_textColor="@color/white"
-                app:met_textColorHint="@color/white"
-                app:met_primaryColor="@color/white"
-                app:met_errorColor="@color/white"
-                app:met_maxCharacters="@integer/confirm_access_code_length"
-                android:inputType="text"
+                android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/ic_access_code"
-                android:drawableStart="@drawable/ic_access_code"
                 android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_access_code"
                 android:ems="10"
                 android:hint="Código de Acesso"
+                android:inputType="text"
                 android:minHeight="50dp"
+                app:met_baseColor="@color/white"
+                app:met_errorColor="@color/white"
                 app:met_floatingLabel="highlight"
-                android:layout_marginTop="20dp" />
+                app:met_maxCharacters="@integer/confirm_access_code_length"
+                app:met_primaryColor="@color/white"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/white" />
 
             <TextView
+                android:id="@+id/txt_qualSeuCurso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="A vida é um curso. Qual é o seu?"
-                android:textSize="18sp"
-                android:textColor="@color/white"
                 android:layout_marginTop="25dp"
-                android:id="@+id/txt_qualSeuCurso" />
+                android:text="A vida é um curso. Qual é o seu?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <Spinner
                 android:id="@+id/spn_cursosUfsc"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/layout_loadingCoursesList"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
                 <ProgressBar
                     style="?android:attr/progressBarStyleSmall"
                     android:layout_width="wrap_content"
@@ -86,11 +86,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center"
                     android:text="Buscando lista de cursos…"
-                    android:textSize="18sp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/white"
-                    android:layout_gravity="center" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!--<TextView-->
@@ -101,30 +101,30 @@
             <!--android:id="@+id/textView"-->
             <!--android:textSize="18sp"-->
             <!--android:textColor="@color/white"-->
-            <!--android:layout_marginTop="40dp" />-->
+            <!--android:layout_marginTop="40dp"/>-->
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txt_qualSuaInicial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Qual a inicial do seu nome?"
-                    android:textSize="18sp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/white"
-                    android:id="@+id/txt_qualSuaInicial" />
+                    android:textSize="18sp" />
 
                 <ImageButton
                     android:id="@+id/imgBtn_infoInicial"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_info"
-                    android:background="?attr/selectableItemBackgroundBorderless"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginStart="10dp" />
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_info" />
             </LinearLayout>
 
             <com.aigestudio.wheelpicker.WheelPicker
@@ -146,27 +146,27 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_send_white"
             app:fabSize="normal"
             app:pressedTranslationZ="12dp"
-            app:rippleColor="@color/white"
-            android:src="@drawable/ic_send_white"/>
+            app:rippleColor="@color/white" />
 
         <ProgressBar
             android:id="@+id/progress_confirmAccessCode"
-            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="@dimen/fab_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/img_confirmSuccess"
-            android:visibility="invisible"
-            android:src="@drawable/ic_done_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="@dimen/fab_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/ic_done_white"
+            android:visibility="invisible" />
 
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

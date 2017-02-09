@@ -30,7 +30,7 @@
             android:theme="@style/AppTheme.Login"
             android:label="Falta pouco…"/>
         <activity
-            android:name=".segredo.novo.NovoSegredoActivity"
+            android:name=".new_implementation.segredo.novo.NovoSegredoActivity"
             android:label="@string/text_compartilhe_segredo"
             android:parentActivityName=".segredo.activity.SegredosActivity"
             android:theme="@style/AppTheme.Dark">

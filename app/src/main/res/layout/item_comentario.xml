@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal"
     android:padding="8dp">
 
     <FrameLayout
@@ -17,29 +16,30 @@
             android:id="@+id/txt_inicial_nome"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="T"
-            android:textColor="@color/white"
             android:layout_gravity="bottom|center_horizontal"
-            android:gravity="center" />
+            android:gravity="center"
+            android:text="T"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
+            android:id="@+id/txt_comentario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Confesso que sou gay e estava de boas na cama iniciando um sexo. Do nada, o outro casa se levanta,pega um spray verde e borrifa na boca. Em seguida, pergunta se eu quero. Pergunto o que é. Diz que menta, pra tirar o gosto do cigarro. Fico com medo, achando que pode ter um boa noite cinderela diluído dentro. Não uso. O foda era que sempre que ele ia me beijar desviava com medo. Ao fim, transamos sem beijos. Que chato isso."
-            android:id="@+id/txt_comentario"
+            android:ellipsize="end"
+            android:maxLines="@integer/max_lines_comentario"
             android:paddingLeft="10dp"
             android:paddingStart="10dp"
-            android:textSize="15sp"
+            android:text="Confesso que sou gay e estava de boas na cama iniciando um sexo. Do nada, o outro casa se levanta,pega um spray verde e borrifa na boca. Em seguida, pergunta se eu quero. Pergunto o que é. Diz que menta, pra tirar o gosto do cigarro. Fico com medo, achando que pode ter um boa noite cinderela diluído dentro. Não uso. O foda era que sempre que ele ia me beijar desviava com medo. Ao fim, transamos sem beijos. Que chato isso."
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
-            android:maxLines="@integer/max_lines_comentario"
-            android:ellipsize="end" />
+            android:textSize="15sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -49,26 +49,26 @@
                 android:id="@+id/txt_curso"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Engenharia Elétrica"
-                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
                 android:paddingStart="10dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp" />
+                android:text="Engenharia Elétrica"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/txt_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="23/08/2016 às 20h54"
-                android:textSize="10sp"
-                android:layout_gravity="center"
                 android:layout_alignBaseline="@+id/txt_curso"
                 android:layout_alignBottom="@+id/txt_curso"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_gravity="center"
+                android:text="23/08/2016 às 20h54"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="10sp" />
 
         </RelativeLayout>
     </LinearLayout>
