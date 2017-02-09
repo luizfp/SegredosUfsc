@@ -51,7 +51,7 @@ public abstract class UseCase<Params, Result> {
    * by {@link #buildUseCaseObservable(Params)} ()} method.
    * @param params Parameters (Optional) used to build/execute this use case.
    */
-  public void execute(DisposableObserver<Result> observer, Params params) {
+  public void execute(Params params, DisposableObserver<Result> observer) {
     final Observable<Result> observable = this.buildUseCaseObservable(params);
     addDisposable(observable.subscribeWith(observer));
   }

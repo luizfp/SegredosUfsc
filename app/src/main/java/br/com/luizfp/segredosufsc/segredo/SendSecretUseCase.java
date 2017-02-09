@@ -8,7 +8,7 @@ import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.Usuario;
 import br.com.luizfp.segredosufsc.exceptions.NoNetworkConnectionException;
 import br.com.luizfp.segredosufsc.network.RestClient;
-import br.com.luizfp.segredosufsc.new_implementation.segredo.Segredo;
+import br.com.luizfp.segredosufsc.new_implementation.segredo.Secret;
 import br.com.luizfp.segredosufsc.util.ConnectionUtils;
 import br.com.luizfp.segredosufsc.util.TokenUtils;
 import rx.Observable;
@@ -37,14 +37,14 @@ public class SendSecretUseCase extends UseCase {
                 try {
                     //Thread.sleep(5000);
                     Credentials credentials = TokenUtils.getCredentials(mContext);
-                    Segredo segredo = new Segredo();
-                    segredo.setSegredo(mSegredo);
+                    Secret secret = new Secret();
+                    secret.setSegredo(mSegredo);
                     Usuario usuario = new Usuario();
                     usuario.setId(credentials.getIdUser());
-                    segredo.setUsuario(usuario);
+                    secret.setUsuario(usuario);
                     RestClient
                             .createService(SegredosRest.class, credentials)
-                            .insert(segredo)
+                            .insert(secret)
                             .subscribe(new Observer<Response>() {
                                 @Override
                                 public void onCompleted() {

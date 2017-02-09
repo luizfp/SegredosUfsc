@@ -1,9 +1,11 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo.novo;
+package br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.presentation;
 
 
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,13 +29,15 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NovoSegredoFragment extends BaseFragment implements
+public class NewSecretFragment extends BaseFragment implements
         OnSendListener,
-        NovoSegredoContract.View {
+        NewSecretContract.View {
     @BindView(R.id.txt_anonimo) TextView mTxtAnonimo;
     @BindView(R.id.edt_novoSegredo) EditText mEdtNovoSegredo;
 
-    public NovoSegredoFragment() {
+    NewSecretContract.Presenter mPresenter;
+
+    public NewSecretFragment() {
         setRetainInstance(true);
     }
 
@@ -48,13 +52,23 @@ public class NovoSegredoFragment extends BaseFragment implements
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        FloatingActionButton fabSend = (FloatingActionButton)
+                getActivity().findViewById(R.id.fab_newSecret);
+        fabSend.setOnClickListener(v ->
+                mPresenter.sendSecret(mEdtNovoSegredo.getText().toString().trim()));
+    }
+
+    @Override
     public void onSend() {
         toast("Precisamos enviar ainda!!!");
     }
 
     @Override
     public void onCancel() {
-        toast("Segredo não enviado :/");
+        toast("Secret não enviado :/");
     }
 
 
@@ -73,7 +87,12 @@ public class NovoSegredoFragment extends BaseFragment implements
 
     }
 
-    @OnClick(R.id.fab_novoSegredo)
+    @Override
+    public void showError(String message) {
+
+    }
+
+    @OnClick(R.id.fab_newSecret)
     public void onClickFab(View view) {
         showDialog(getFragmentManager());
     }

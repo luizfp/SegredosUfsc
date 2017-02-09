@@ -12,7 +12,7 @@ import br.com.luizfp.segredosufsc.comentario.Comentario;
  * Created by luiz on 2/23/16.
  */
 @Parcel
-public class Segredo {
+public class Secret {
     public Long id;
     public String segredo;
     public Date data;
@@ -21,7 +21,7 @@ public class Segredo {
     public long totalFavorites;
     public boolean favorite;
 
-    public Segredo() {
+    public Secret() {
     }
 
     public Long getId() {

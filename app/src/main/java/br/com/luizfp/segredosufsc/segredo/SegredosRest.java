@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.luizfp.segredosufsc.comentario.Comentario;
 import br.com.luizfp.segredosufsc.network.Response;
-import br.com.luizfp.segredosufsc.new_implementation.segredo.Segredo;
+import br.com.luizfp.segredosufsc.new_implementation.segredo.Secret;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -19,20 +19,20 @@ import rx.Observable;
 public interface SegredosRest {
 
     @GET("segredos/{idUsuario}")
-    Observable<List<Segredo>> getList(@Path("idUsuario") Long idUsuario,
-                                      @Query("limit") int limit,
-                                      @Query("offset") long offset);
+    Observable<List<Secret>> getList(@Path("idUsuario") Long idUsuario,
+                                     @Query("limit") int limit,
+                                     @Query("offset") long offset);
 
     @POST("segredos")
-    Observable<Response> insert(@Body Segredo segredo);
+    Observable<Response> insert(@Body Secret secret);
 
     @GET("segredos/{idUsuario}/comentarios")
     Observable<List<Comentario>> getAllComentsBySegredo(@Path("idUsuario") Long idSegredo);
 
     @GET("segredos/{idUsuario}/favoritos")
-    Observable<List<Segredo>> getListFavorites(@Path("idUsuario") Long idUsuario,
-                                                  @Query("limit") int limit,
-                                                  @Query("offset") long offset);
+    Observable<List<Secret>> getListFavorites(@Path("idUsuario") Long idUsuario,
+                                              @Query("limit") int limit,
+                                              @Query("offset") long offset);
 
     @PUT("segredos")
     Observable<Response> addRemoveFavorite(@Body SegredoFavoritoUsuario segredoFavoritoUsuario);

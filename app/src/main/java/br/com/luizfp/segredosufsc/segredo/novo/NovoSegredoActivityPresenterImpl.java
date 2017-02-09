@@ -56,9 +56,9 @@ public class NovoSegredoActivityPresenterImpl extends MvpPresenter<NovoSegredoAc
     @Override
     public void sendNewSecret(String secret) {
         if (isViewAttached()) {
-            getView().showHideNovoSegredoFragment();
-            getView().addLoadingFragment();
-            getView().showLoadingToolbarMessage();
+//            getView().showHideNovoSegredoFragment();
+//            getView().addLoadingFragment();
+//            getView().showLoadingToolbarMessage();
             mSendSecretUseCase = new SendSecretUseCase(
                     Schedulers.io(),
                     AndroidSchedulers.mainThread(),
@@ -73,15 +73,15 @@ public class NovoSegredoActivityPresenterImpl extends MvpPresenter<NovoSegredoAc
         mNovoSegredoFoiEnviado = true;
         EventBus.getDefault().post(new SecretSuccessInsertEvent());
         if (isViewAttached()) {
-            getView().showSuccessToolbarMessage();
+//            getView().showSuccessToolbarMessage();
         }
     }
 
     private void showError(ErrorBundle errorBundle) {
         if (isViewAttached()) {
-            getView().removeLoadingFragment();
-            getView().showHideNovoSegredoFragment();
-            getView().resetToolbarMessage();
+//            getView().removeLoadingFragment();
+//            getView().showHideNovoSegredoFragment();
+//            getView().resetToolbarMessage();
             getView().showError(ErrorMessageFactory.create(getView().context(), errorBundle.getException()));
         }
     }

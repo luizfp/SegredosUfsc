@@ -47,7 +47,7 @@
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:lines="2"
-                android:text="Assim que você favoritar um segredo, ele aparecerá aqui."
+                android:text="Assim que você favoritar um secret, ele aparecerá aqui."
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <Button

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".segredo.activity.SegredosActivity"
+            android:name=".secret.activity.SegredosActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".login.LoginActivity"
@@ -30,13 +30,13 @@
             android:theme="@style/AppTheme.Login"
             android:label="Falta pouco…"/>
         <activity
-            android:name=".new_implementation.segredo.novo.NovoSegredoActivity"
+            android:name=".new_implementation.secret.novo.presentation.NewSecretActivity"
             android:label="@string/text_compartilhe_segredo"
-            android:parentActivityName=".segredo.activity.SegredosActivity"
+            android:parentActivityName=".secret.activity.SegredosActivity"
             android:theme="@style/AppTheme.Dark">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".segredo.activity.SegredosActivity" />
+                android:value=".secret.activity.SegredosActivity" />
         </activity>
         <activity
             android:name=".comentario.ComentariosActivity"

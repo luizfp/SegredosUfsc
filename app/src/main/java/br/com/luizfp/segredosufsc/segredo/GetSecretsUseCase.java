@@ -11,7 +11,7 @@ import br.com.luizfp.segredosufsc.network.Credentials;
 import br.com.luizfp.segredosufsc.exceptions.NoNetworkConnectionException;
 import br.com.luizfp.segredosufsc.network.RestClient;
 import br.com.luizfp.segredosufsc.comentario.ComentarioViewModel;
-import br.com.luizfp.segredosufsc.new_implementation.segredo.Segredo;
+import br.com.luizfp.segredosufsc.new_implementation.segredo.Secret;
 import br.com.luizfp.segredosufsc.util.ConnectionUtils;
 import br.com.luizfp.segredosufsc.util.TimeUtils;
 import br.com.luizfp.segredosufsc.util.TokenUtils;
@@ -53,11 +53,11 @@ public class GetSecretsUseCase extends UseCase {
                             .map(segredoList -> {
                                 // TODO: Melhor fazer dois DataMapper separados para isso
                                 List<SegredoViewModel> l = new ArrayList<>();
-                                for (Segredo segredo : segredoList) {
+                                for (Secret secret : segredoList) {
                                     SegredoViewModel s = new SegredoViewModel();
-                                    s.setSegredo("\"" + segredo.getSegredo() + "\"");
+                                    s.setSegredo("\"" + secret.getSegredo() + "\"");
                                     List<ComentarioViewModel> comentarioViewModelList = new ArrayList<>();
-                                    for (Comentario comentario : segredo.getComentarioList()) {
+                                    for (Comentario comentario : secret.getComentarioList()) {
                                         ComentarioViewModel c = new ComentarioViewModel();
                                         c.setComentario(comentario.getComentario());
                                         c.setDataString(TimeUtils.toUserFriendlyTimestamp(comentario.getData()));
@@ -66,11 +66,11 @@ public class GetSecretsUseCase extends UseCase {
                                         comentarioViewModelList.add(c);
                                     }
                                     s.setComentarioList(comentarioViewModelList);
-                                    s.setDataString(TimeUtils.toUserFriendlyTimestamp(segredo.getData()));
-                                    s.setId(segredo.getId());
-                                    s.setUsuario(segredo.getUsuario());
-                                    s.setFavorite(segredo.isFavorite());
-                                    s.setTotalFavorites(segredo.getTotalFavorites());
+                                    s.setDataString(TimeUtils.toUserFriendlyTimestamp(secret.getData()));
+                                    s.setId(secret.getId());
+                                    s.setUsuario(secret.getUsuario());
+                                    s.setFavorite(secret.isFavorite());
+                                    s.setTotalFavorites(secret.getTotalFavorites());
                                     l.add(s);
                                 }
                                 return l;

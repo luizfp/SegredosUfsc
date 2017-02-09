@@ -21,7 +21,7 @@ import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.login.LoginActivity;
 import br.com.luizfp.segredosufsc.mvp.MvpActivity;
 import br.com.luizfp.segredosufsc.segredo.fragment.SegredosFragment;
-import br.com.luizfp.segredosufsc.new_implementation.segredo.novo.NovoSegredoActivity;
+import br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.presentation.NewSecretActivity;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.SelectLetterDialog;
 import br.com.luizfp.segredosufsc.util.L;
 import br.com.luizfp.segredosufsc.util.Prefs;
@@ -200,9 +200,9 @@ public class SegredosActivity extends MvpActivity<SegredosActivityPresenter>
         dialogFrag.show(ft, SelectLetterDialog.DIALOG_TAG);
     }
 
-    @OnClick(R.id.fab_novoSegredo)
+    @OnClick(R.id.fab_newSecret)
     public void onClickFab(View view) {
-        startActivity(new Intent(view.getContext(), NovoSegredoActivity.class));
+        startActivity(new Intent(view.getContext(), NewSecretActivity.class));
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
