@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.base;
+package br.com.luizfp.segredosufsc.new_implementation.base;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
 
-import br.com.luizfp.segredosufsc.Application;
+import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
 import butterknife.Unbinder;
 
 /**
@@ -20,7 +20,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Application.getRefWatcher(getActivity()).watch(this);
+        SegredosUfscApplication.getRefWatcher(getActivity()).watch(this);
     }
 
     protected void toast(String msg) {

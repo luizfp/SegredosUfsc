@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc;
+package br.com.luizfp.segredosufsc.new_implementation;
 
 import android.content.Context;
 
@@ -12,12 +12,13 @@ import io.fabric.sdk.android.Fabric;
 /**
  * Created by luiz on 2/24/16.
  */
-public class Application extends android.app.Application {
+public class SegredosUfscApplication extends android.app.Application {
     private RefWatcher refWatcher;
 
     public static RefWatcher getRefWatcher(Context context) {
-        Application application = (Application) context.getApplicationContext();
-        return application.refWatcher;
+        SegredosUfscApplication segredosUfscApplication =
+                (SegredosUfscApplication) context.getApplicationContext();
+        return segredosUfscApplication.refWatcher;
     }
 
     @Override

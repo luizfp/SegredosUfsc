@@ -14,7 +14,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseFragment;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
 import br.com.luizfp.segredosufsc.util.L;
 import butterknife.BindView;
 import butterknife.ButterKnife;

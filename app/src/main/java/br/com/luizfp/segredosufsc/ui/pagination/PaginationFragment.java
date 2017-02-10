@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
-import br.com.luizfp.segredosufsc.base.BaseFragment;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
 import br.com.luizfp.segredosufsc.util.L;
 
 /**

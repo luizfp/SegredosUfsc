@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.base;
+package br.com.luizfp.segredosufsc.new_implementation.base;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.MenuItem;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseActivity;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseActivity;
 
 public class ConfirmAccessCodeActivity extends BaseActivity {
 

@@ -8,7 +8,7 @@
         <item name="android:spinnerStyle">@style/Base.Widget.AppCompat.Spinner.Underlined</item>
     </style>
 
-    <!-- Base application theme. -->
+    <!-- Base segredosUfscApplication theme. -->
     <style name="AppTheme" parent="BaseAppTheme"/>
 
     <!--<style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">-->

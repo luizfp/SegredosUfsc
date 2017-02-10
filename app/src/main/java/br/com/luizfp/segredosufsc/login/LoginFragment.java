@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseAnimatorListener;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseAnimatorListener;
 import br.com.luizfp.segredosufsc.login.confirm_access_code.ConfirmAccessCodeActivity;
 import br.com.luizfp.segredosufsc.login.confirm_access_code.ConfirmAccessCodeFragment;
 import br.com.luizfp.segredosufsc.mvp.MvpFragment;

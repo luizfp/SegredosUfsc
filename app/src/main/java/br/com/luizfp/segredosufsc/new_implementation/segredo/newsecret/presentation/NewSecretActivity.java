@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseActivity;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseActivity;
 import butterknife.ButterKnife;
 
 public class NewSecretActivity extends BaseActivity {

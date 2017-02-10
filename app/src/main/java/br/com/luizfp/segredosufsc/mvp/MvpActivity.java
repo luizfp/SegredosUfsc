@@ -2,7 +2,7 @@ package br.com.luizfp.segredosufsc.mvp;
 
 import android.os.Bundle;
 
-import br.com.luizfp.segredosufsc.base.BaseActivity;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseActivity;
 
 /**
  * Created by luiz on 3/8/16.

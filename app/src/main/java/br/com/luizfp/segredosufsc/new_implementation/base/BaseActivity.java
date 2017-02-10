@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.base;
+package br.com.luizfp.segredosufsc.new_implementation.base;
 
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.squareup.leakcanary.RefWatcher;
 
-import br.com.luizfp.segredosufsc.Application;
+import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
 import br.com.luizfp.segredosufsc.R;
 
 /**
@@ -36,14 +36,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RefWatcher refWatcher = Application.getRefWatcher(this);
+        RefWatcher refWatcher = SegredosUfscApplication.getRefWatcher(this);
         refWatcher.watch(this);
-    }
-
-    protected void changeToolbarTitle(String newTitle) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(newTitle);
-        }
     }
 
     protected void toast(String msg) {

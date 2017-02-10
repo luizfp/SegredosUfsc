@@ -6,8 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <application
-        android:name=".Application"
+    <segredosUfscApplication
+        android:name=".SegredosUfscApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -45,6 +45,6 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="655d39de837e69b4ae5f5a57778ab50d8b7cad85" />
-    </application>
+    </segredosUfscApplication>
 
 </manifest>

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseActivity;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseActivity;
 import br.com.luizfp.segredosufsc.segredo.activity.SegredosActivity;
 import br.com.luizfp.segredosufsc.util.Prefs;
 

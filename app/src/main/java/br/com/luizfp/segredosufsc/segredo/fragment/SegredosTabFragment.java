@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.base.BaseFragment;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

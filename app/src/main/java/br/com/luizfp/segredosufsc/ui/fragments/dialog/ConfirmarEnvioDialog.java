@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import br.com.luizfp.segredosufsc.OnSendListener;
-import br.com.luizfp.segredosufsc.base.BaseDialog;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseDialog;
 
 /**
  * Created by luiz on 12/20/15.

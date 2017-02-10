@@ -3,7 +3,7 @@ package br.com.luizfp.segredosufsc.ui.fragments.dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import br.com.luizfp.segredosufsc.base.BaseDialog;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseDialog;
 import br.com.luizfp.segredosufsc.util.L;
 
 /**
