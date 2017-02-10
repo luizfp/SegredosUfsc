@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo;
+package br.com.luizfp.segredosufsc.new_implementation.secret;
 
 import org.parceler.Parcel;
 

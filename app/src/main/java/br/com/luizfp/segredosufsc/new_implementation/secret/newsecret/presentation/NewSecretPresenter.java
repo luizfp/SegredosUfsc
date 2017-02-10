@@ -1,13 +1,13 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.presentation;
+package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentation;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.new_implementation.interactor.DefaultObserver;
-import br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.domain.SendSecretUseCase;
+import br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase;
 
-import static br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.domain.SendSecretUseCase.*;
+import static br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase.*;
 
 /**
  * Created by luiz on 09/02/17.

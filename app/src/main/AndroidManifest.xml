@@ -6,15 +6,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <segredosUfscApplication
-        android:name=".SegredosUfscApplication"
+    <application
+        android:name=".new_implementation.SegredosUfscApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".secret.activity.SegredosActivity"
+            android:name=".segredo.activity.SegredosActivity"
             android:label="@string/app_name" />
         <activity
             android:name=".login.LoginActivity"
@@ -30,13 +30,13 @@
             android:theme="@style/AppTheme.Login"
             android:label="Falta pouco…"/>
         <activity
-            android:name=".new_implementation.secret.novo.presentation.NewSecretActivity"
+            android:name=".new_implementation.secret.newsecret.presentation.NewSecretActivity"
             android:label="@string/text_compartilhe_segredo"
-            android:parentActivityName=".secret.activity.SegredosActivity"
+            android:parentActivityName=".segredo.activity.SegredosActivity"
             android:theme="@style/AppTheme.Dark">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".secret.activity.SegredosActivity" />
+                android:value=".segredo.activity.SegredosActivity" />
         </activity>
         <activity
             android:name=".comentario.ComentariosActivity"
@@ -45,6 +45,6 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="655d39de837e69b4ae5f5a57778ab50d8b7cad85" />
-    </segredosUfscApplication>
+    </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.presentation;
+package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentation;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;

@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.domain;
+package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain;
 
 import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.new_implementation.interactor.UseCase;

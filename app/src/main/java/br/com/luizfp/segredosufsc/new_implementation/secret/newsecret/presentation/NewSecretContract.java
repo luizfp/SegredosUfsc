@@ -1,4 +1,4 @@
-package br.com.luizfp.segredosufsc.new_implementation.segredo.newsecret.presentation;
+package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentation;
 
 import br.com.luizfp.segredosufsc.new_implementation.base.LoadingView;
 import br.com.luizfp.segredosufsc.new_implementation.base.MvpPresenter;
