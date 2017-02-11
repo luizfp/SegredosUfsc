@@ -19,7 +19,6 @@ import android.content.Context;
 
 import javax.inject.Singleton;
 
-import br.com.luizfp.segredosufsc.new_implementation.base.BaseActivity;
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.ApplicationModule;
 import br.com.luizfp.segredosufsc.new_implementation.schedulers.BaseSchedulerProvider;
 import dagger.Component;
@@ -30,7 +29,6 @@ import dagger.Component;
 @Singleton // Constraints this component to one-per-application or unscoped bindings.
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-  void inject(BaseActivity baseActivity);
 
   //Exposed to sub-graphs.
   Context context();

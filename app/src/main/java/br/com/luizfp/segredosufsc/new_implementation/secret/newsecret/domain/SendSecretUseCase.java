@@ -1,5 +1,7 @@
 package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain;
 
+import javax.inject.Inject;
+
 import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.new_implementation.interactor.UseCase;
 import br.com.luizfp.segredosufsc.new_implementation.schedulers.BaseSchedulerProvider;
@@ -11,8 +13,8 @@ import io.reactivex.Observable;
 
 public class SendSecretUseCase extends UseCase<SendSecretUseCase.Params, Response> {
 
-
-    SendSecretUseCase(BaseSchedulerProvider schedulerProvider) {
+    @Inject
+    public SendSecretUseCase(BaseSchedulerProvider schedulerProvider) {
         super(schedulerProvider);
     }
 

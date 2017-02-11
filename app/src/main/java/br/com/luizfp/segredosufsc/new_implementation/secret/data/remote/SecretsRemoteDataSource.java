@@ -1,5 +1,8 @@
 package br.com.luizfp.segredosufsc.new_implementation.secret.data.remote;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -15,7 +18,7 @@ import io.reactivex.Observable;
 public final class SecretsRemoteDataSource implements SecretsDataSource {
 
     @Inject
-    public SecretsRemoteDataSource() {
+    public SecretsRemoteDataSource(@NonNull Context context) {
 
     }
 

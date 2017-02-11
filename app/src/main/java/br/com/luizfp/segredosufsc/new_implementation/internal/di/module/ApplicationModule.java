@@ -19,7 +19,6 @@ import android.content.Context;
 
 import javax.inject.Singleton;
 
-import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
 import br.com.luizfp.segredosufsc.new_implementation.schedulers.BaseSchedulerProvider;
 import br.com.luizfp.segredosufsc.new_implementation.schedulers.SchedulerProvider;
 import dagger.Module;
@@ -30,21 +29,21 @@ import dagger.Provides;
  */
 @Module
 public class ApplicationModule {
-  private final SegredosUfscApplication application;
+  private final Context mContext;
 
-  public ApplicationModule(SegredosUfscApplication application) {
-    this.application = application;
+  public ApplicationModule(Context context) {
+    mContext = context;
   }
 
   @Provides
   @Singleton
   Context provideApplicationContext() {
-    return this.application;
+    return mContext;
   }
 
   @Provides
   @Singleton
-  BaseSchedulerProvider provideSchedulerProvidder(SchedulerProvider schedulerProvider) {
-    return schedulerProvider;
+  BaseSchedulerProvider provideSchedulerProvider() {
+    return new SchedulerProvider();
   }
 }

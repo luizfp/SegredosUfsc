@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
 
-import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.HasComponent;
 import butterknife.Unbinder;
 
 /**
@@ -16,12 +16,6 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
     @Nullable
     protected Unbinder mUnbinder;
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        SegredosUfscApplication.getRefWatcher(getActivity()).watch(this);
-    }
 
     protected void toast(String msg) {
         Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
@@ -36,6 +30,14 @@ public abstract class BaseFragment extends Fragment {
      */
     public Context getContext() {
         return getActivity();
+    }
+
+    /**
+     * Gets a component for dependency injection by its type.
+     */
+    @SuppressWarnings("unchecked")
+    protected <C> C getComponent(Class<C> componentType) {
+        return componentType.cast(((HasComponent<C>) getActivity()).getComponent());
     }
 
     @Override

@@ -1,10 +1,9 @@
-package br.com.luizfp.segredosufsc.new_implementation.internal.di;
+package br.com.luizfp.segredosufsc.new_implementation.secret.data;
 
 import javax.inject.Singleton;
 
 import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.ApplicationModule;
-import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepository;
 import dagger.Component;
 
 /**
@@ -19,5 +18,5 @@ import dagger.Component;
 @Component(modules = {SecretsRepositoryModule.class, ApplicationModule.class})
 public interface SecretsRepositoryComponent {
 
-    SecretsRepository getTasksRepository();
+    SecretsRepository secretsRepository();
 }

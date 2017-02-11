@@ -16,10 +16,13 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 import br.com.luizfp.segredosufsc.OnSendListener;
 import br.com.luizfp.segredosufsc.R;
-import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
 import br.com.luizfp.segredosufsc.new_implementation.Fonts;
+import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
+import br.com.luizfp.segredosufsc.new_implementation.secret.SecretsComponent;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.ConfirmarEnvioDialog;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
 import butterknife.BindView;
@@ -35,10 +38,17 @@ public class NewSecretFragment extends BaseFragment implements
     @BindView(R.id.txt_anonimo) TextView mTxtAnonimo;
     @BindView(R.id.edt_novoSegredo) EditText mEdtNovoSegredo;
 
+    @Inject
     NewSecretContract.Presenter mPresenter;
 
     public NewSecretFragment() {
         setRetainInstance(true);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getComponent(SecretsComponent.class).inject(this);
     }
 
     @Override

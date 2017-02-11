@@ -1,32 +1,63 @@
 package br.com.luizfp.segredosufsc.new_implementation;
 
-import android.content.Context;
-
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
 import com.github.anrwatchdog.ANRWatchDog;
 import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
 
+import br.com.luizfp.segredosufsc.BuildConfig;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.ApplicationComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.DaggerApplicationComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.ApplicationModule;
+import br.com.luizfp.segredosufsc.new_implementation.secret.data.DaggerSecretsRepositoryComponent;
+import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepositoryComponent;
 import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by luiz on 2/24/16.
  */
 public class SegredosUfscApplication extends android.app.Application {
-    private RefWatcher refWatcher;
 
-    public static RefWatcher getRefWatcher(Context context) {
-        SegredosUfscApplication segredosUfscApplication =
-                (SegredosUfscApplication) context.getApplicationContext();
-        return segredosUfscApplication.refWatcher;
-    }
+    private ApplicationComponent mApplicationComponent;
+    private SecretsRepositoryComponent mSecretsRepositoryComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        initFabric();
+        initLeakCanary();
+        initWatchDog();
+        initInjector();
+    }
+
+    public ApplicationComponent getApplicationComponent() {
+        return mApplicationComponent;
+    }
+
+    public SecretsRepositoryComponent getSecretsRepositoyComponent() {
+        return mSecretsRepositoryComponent;
+    }
+
+    private void initFabric() {
         Fabric.with(this, new Crashlytics(), new Answers());
-        refWatcher = LeakCanary.install(this);
+    }
+
+    private void initWatchDog() {
         new ANRWatchDog().start();
+    }
+
+    private void initLeakCanary() {
+        if (BuildConfig.DEBUG) {
+            LeakCanary.install(this);
+        }
+    }
+
+    private void initInjector() {
+        mApplicationComponent = DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule(getApplicationContext()))
+                .build();
+        mSecretsRepositoryComponent = DaggerSecretsRepositoryComponent.builder()
+                .applicationModule(new ApplicationModule(getApplicationContext()))
+                .build();
     }
 }

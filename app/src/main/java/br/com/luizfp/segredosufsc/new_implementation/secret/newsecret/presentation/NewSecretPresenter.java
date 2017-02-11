@@ -3,22 +3,26 @@ package br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentat
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import javax.inject.Inject;
+
 import br.com.luizfp.segredosufsc.network.Response;
 import br.com.luizfp.segredosufsc.new_implementation.interactor.DefaultObserver;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.PerActivity;
 import br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase;
 
-import static br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase.*;
+import static br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase.Params;
 
 /**
  * Created by luiz on 09/02/17.
  */
-
+@PerActivity
 public class NewSecretPresenter implements NewSecretContract.Presenter {
     @NonNull
     private final SendSecretUseCase mSendSecretUseCase;
     @Nullable
     private NewSecretContract.View mView;
 
+    @Inject
     public NewSecretPresenter(@NonNull SendSecretUseCase sendSecretUseCase) {
         mSendSecretUseCase = sendSecretUseCase;
     }
