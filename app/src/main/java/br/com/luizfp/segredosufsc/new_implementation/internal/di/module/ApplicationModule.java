@@ -36,13 +36,11 @@ public class ApplicationModule {
   }
 
   @Provides
-  @Singleton
   Context provideApplicationContext() {
     return mContext;
   }
 
   @Provides
-  @Singleton
   BaseSchedulerProvider provideSchedulerProvider() {
     return new SchedulerProvider();
   }

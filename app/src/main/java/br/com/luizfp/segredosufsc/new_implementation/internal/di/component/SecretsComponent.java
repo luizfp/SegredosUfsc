@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package br.com.luizfp.segredosufsc.new_implementation.secret;
+package br.com.luizfp.segredosufsc.new_implementation.internal.di.component;
 
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.PerActivity;
-import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepositoryComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.SecretsModule;
 import br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentation.NewSecretFragment;
 import dagger.Component;
 
@@ -24,7 +24,6 @@ import dagger.Component;
  * A scope {@link PerActivity} component.
  * Injects user specific Fragments.
  */
-@PerActivity
 @Component(dependencies = SecretsRepositoryComponent.class, modules = SecretsModule.class)
 public interface SecretsComponent {
   void inject(NewSecretFragment newSecretFragment);

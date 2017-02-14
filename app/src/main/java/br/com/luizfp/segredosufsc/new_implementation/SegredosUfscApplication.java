@@ -7,10 +7,9 @@ import com.squareup.leakcanary.LeakCanary;
 
 import br.com.luizfp.segredosufsc.BuildConfig;
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.ApplicationComponent;
-import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.DaggerApplicationComponent;
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.ApplicationModule;
-import br.com.luizfp.segredosufsc.new_implementation.secret.data.DaggerSecretsRepositoryComponent;
-import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepositoryComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.SecretsRepositoryComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.SecretsRepositoryModule;
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -54,10 +53,10 @@ public class SegredosUfscApplication extends android.app.Application {
 
     private void initInjector() {
         mApplicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(getApplicationContext()))
+                .applicationModule(new ApplicationModule(SegredosUfscApplication.this))
                 .build();
         mSecretsRepositoryComponent = DaggerSecretsRepositoryComponent.builder()
-                .applicationModule(new ApplicationModule(getApplicationContext()))
+                .applicationModule(new SecretsRepositoryModule())
                 .build();
     }
 }

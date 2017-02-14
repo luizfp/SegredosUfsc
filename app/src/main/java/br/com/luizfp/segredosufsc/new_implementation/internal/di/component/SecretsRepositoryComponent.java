@@ -1,9 +1,9 @@
-package br.com.luizfp.segredosufsc.new_implementation.secret.data;
-
-import javax.inject.Singleton;
+package br.com.luizfp.segredosufsc.new_implementation.internal.di.component;
 
 import br.com.luizfp.segredosufsc.new_implementation.SegredosUfscApplication;
 import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.ApplicationModule;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.module.SecretsRepositoryModule;
+import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepository;
 import dagger.Component;
 
 /**
@@ -14,7 +14,6 @@ import dagger.Component;
  * itself must ensure only one instance of the class is created. This is done in {@link
  * SegredosUfscApplication}.
  */
-@Singleton
 @Component(modules = {SecretsRepositoryModule.class, ApplicationModule.class})
 public interface SecretsRepositoryComponent {
 

@@ -1,11 +1,10 @@
-package br.com.luizfp.segredosufsc.new_implementation.secret.data;
+package br.com.luizfp.segredosufsc.new_implementation.internal.di.module;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import javax.inject.Singleton;
-
-import br.com.luizfp.segredosufsc.new_implementation.internal.di.Remote;
+import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsDataSource;
+import br.com.luizfp.segredosufsc.new_implementation.secret.data.SecretsRepository;
 import br.com.luizfp.segredosufsc.new_implementation.secret.data.remote.SecretsRemoteDataSource;
 import dagger.Module;
 import dagger.Provides;
@@ -14,11 +13,11 @@ import dagger.Provides;
  * This is used by Dagger to inject the required arguments into the {@link SecretsRepository}.
  */
 @Module
-class SecretsRepositoryModule {
+public class SecretsRepositoryModule {
 
-    @Singleton
+    public SecretsRepositoryModule() {}
+
     @Provides
-    @Remote
     SecretsDataSource provideSecretsRemoteDataSource(@NonNull Context context) {
         return new SecretsRemoteDataSource(context);
     }

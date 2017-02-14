@@ -3,25 +3,26 @@ package br.com.luizfp.segredosufsc.new_implementation.secret.data;
 import android.support.annotation.NonNull;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import br.com.luizfp.segredosufsc.network.Response;
-import br.com.luizfp.segredosufsc.new_implementation.internal.di.Remote;
 import br.com.luizfp.segredosufsc.new_implementation.secret.Secret;
+import dagger.Module;
+import dagger.Provides;
 import io.reactivex.Observable;
 
 /**
  * Created by luiz on 09/02/17.
  */
-@Singleton
+@Module
 public class SecretsRepository implements SecretsDataSource {
 
     @Inject
-    public SecretsRepository(@NonNull @Remote SecretsDataSource secretRemoteDataSource) {
+    public SecretsRepository(@NonNull SecretsDataSource secretRemoteDataSource) {
 
     }
 
     @Override
+    @Provides
     public Observable<Response> sendSecret(Secret secret) {
         return null;
     }

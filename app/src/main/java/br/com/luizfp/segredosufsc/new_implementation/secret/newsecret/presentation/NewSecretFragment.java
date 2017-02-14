@@ -22,7 +22,7 @@ import br.com.luizfp.segredosufsc.OnSendListener;
 import br.com.luizfp.segredosufsc.R;
 import br.com.luizfp.segredosufsc.new_implementation.Fonts;
 import br.com.luizfp.segredosufsc.new_implementation.base.BaseFragment;
-import br.com.luizfp.segredosufsc.new_implementation.secret.SecretsComponent;
+import br.com.luizfp.segredosufsc.new_implementation.internal.di.component.SecretsComponent;
 import br.com.luizfp.segredosufsc.ui.fragments.dialog.ConfirmarEnvioDialog;
 import br.com.luizfp.segredosufsc.util.TypefaceHelper;
 import butterknife.BindView;

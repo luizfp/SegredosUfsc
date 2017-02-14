@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package br.com.luizfp.segredosufsc.new_implementation.secret;
+package br.com.luizfp.segredosufsc.new_implementation.internal.di.module;
 
 import android.support.annotation.NonNull;
 
-import br.com.luizfp.segredosufsc.new_implementation.internal.di.PerActivity;
 import br.com.luizfp.segredosufsc.new_implementation.schedulers.BaseSchedulerProvider;
 import br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.domain.SendSecretUseCase;
 import br.com.luizfp.segredosufsc.new_implementation.secret.newsecret.presentation.NewSecretContract;
@@ -32,13 +31,11 @@ import dagger.Provides;
 public class SecretsModule {
 
   @Provides
-  @PerActivity
   NewSecretContract.Presenter provideNewSecretPresenter(@NonNull SendSecretUseCase sendSecretUseCase) {
     return new NewSecretPresenter(sendSecretUseCase);
   }
 
   @Provides
-  @PerActivity
   SendSecretUseCase provideSendSecretUseCase(@NonNull BaseSchedulerProvider schedulerProvider) {
     return new SendSecretUseCase(schedulerProvider);
   }
