@@ -40,12 +40,12 @@ public class NewSecretActivity extends BaseActivity implements HasComponent<Secr
     }
 
     private void initInjector() {
-        mSecretsComponent = DaggerSecretsComponent.builder()
-                .applicationModule(getApplicationComponent())
-                .build();
 //        mSecretsComponent = DaggerSecretsComponent.builder()
 //                .secretsRepositoryComponent(((SegredosUfscApplication) getApplication())
 //                        .getSecretsRepositoyComponent())
 //                .build();
+        mSecretsComponent = DaggerSecretsComponent.builder()
+                .applicationModule(getApplication())
+                .build();
     }
 }
