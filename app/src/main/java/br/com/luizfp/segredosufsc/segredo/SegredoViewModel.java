@@ -16,14 +16,14 @@ import br.com.luizfp.segredosufsc.comentario.ComentarioViewModel;
  */
 @Parcel
 public class SegredoViewModel {
-    private Long id;
-    private String segredo;
-    private String dataString;
-    private Usuario usuario;
-    private List<ComentarioViewModel> comentarioList;
-    private long totalFavorites;
-    private int backgroundColor;
-    private boolean favorite;
+    public Long id;
+    public String segredo;
+    public String dataString;
+    public Usuario usuario;
+    public List<ComentarioViewModel> comentarioList;
+    public long totalFavorites;
+    public int backgroundColor;
+    public boolean favorite;
 
     public SegredoViewModel() {
     }

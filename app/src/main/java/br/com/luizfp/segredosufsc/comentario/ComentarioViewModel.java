@@ -11,11 +11,11 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class ComentarioViewModel {
-    private String comentario;
-    private String nomeCursoUsuario;
-    private String dataString;
-    private char inicialNomeUsuario;
-    private int backgroundColorInicialUsuario;
+    public String comentario;
+    public String nomeCursoUsuario;
+    public String dataString;
+    public char inicialNomeUsuario;
+    public int backgroundColorInicialUsuario;
 
     public ComentarioViewModel() {
     }

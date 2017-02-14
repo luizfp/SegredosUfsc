@@ -9,11 +9,11 @@ import java.util.Date;
  */
 @Parcel
 public class Comentario {
-    private Long id;
-    private Date data;
-    private String comentario;
-    private br.com.luizfp.segredosufsc.Usuario Usuario;
-    private Long idSegredo;
+    public Long id;
+    public Date data;
+    public String comentario;
+    public br.com.luizfp.segredosufsc.Usuario Usuario;
+    public Long idSegredo;
 
     public Comentario() {
     }

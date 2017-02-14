@@ -7,9 +7,9 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Usuario {
-    private Long id;
-    private char inicial;
-    private Curso curso;
+    public Long id;
+    public char inicial;
+    public Curso curso;
 
     public Usuario() {
     }

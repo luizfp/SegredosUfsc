@@ -8,8 +8,8 @@ import org.parceler.Parcel;
  */
 @Parcel
 public class Curso  {
-    private Long id;
-    private String nome;
+    public Long id;
+    public String nome;
 
     public Curso() {
     }
